@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="graphMeteo">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <collectionViewItem id="BO2-in-3JR" customClass="CollectionViewItem" customModule="subView2" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="bf9-cB-xlw" id="jFH-kl-oxM"/>
+                <outlet property="textField" destination="Pne-0x-Fha" id="GkN-Ce-5Z8"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="8Qb-Hf-la1"/>
+            </connections>
+        </collectionViewItem>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="242"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bf9-cB-xlw">
+                    <rect key="frame" x="0.0" y="30" width="311" height="197"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="mb2-7k-gmB"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-0x-Fha">
+                    <rect key="frame" x="-2" y="0.0" width="315" height="30"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="krr-I6-tFD">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Pne-0x-Fha" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="0aH-tZ-Ffd"/>
+                <constraint firstAttribute="bottom" secondItem="bf9-cB-xlw" secondAttribute="bottom" constant="30" id="5BU-h6-CK5"/>
+                <constraint firstItem="bf9-cB-xlw" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="86w-lU-h4X"/>
+                <constraint firstItem="Pne-0x-Fha" firstAttribute="top" secondItem="bf9-cB-xlw" secondAttribute="bottom" id="JTR-r6-DsN"/>
+                <constraint firstAttribute="bottom" secondItem="Pne-0x-Fha" secondAttribute="bottom" id="e17-mG-mcr"/>
+                <constraint firstAttribute="trailing" secondItem="bf9-cB-xlw" secondAttribute="trailing" id="gyg-GT-4VZ"/>
+                <constraint firstItem="bf9-cB-xlw" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="rfD-2I-yxY"/>
+                <constraint firstAttribute="trailing" secondItem="Pne-0x-Fha" secondAttribute="trailing" id="xzu-L0-FbI"/>
+            </constraints>
+            <point key="canvasLocation" x="54.5" y="154"/>
+        </customView>
+    </objects>
+</document>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="StackedBarChartViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="chartView" destination="OSZ-ee-K0E" id="ZSW-vk-pbc"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="9Rw-wM-2iD"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="750" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-ee-K0E" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="58" width="750" height="442"/>
+                    </customView>
+                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n29-0c-H4G">
+                        <rect key="frame" x="653" y="20" width="97" height="19"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-rP-dg1">
+                                <rect key="frame" x="0.0" y="-1" width="27" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="kew-J2-cvF"/>
+                                    <constraint firstAttribute="width" constant="27" id="pxd-fe-W4M"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gRB-s7-KhX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="zoomIn:" target="-2" id="FDS-al-cXJ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t5M-IS-k4d">
+                                <rect key="frame" x="35" y="-1" width="27" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Kwi-WB-2zh"/>
+                                    <constraint firstAttribute="width" constant="27" id="Wgl-dd-dXU"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSHomeTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZcD-8F-1Fk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="zoomAll:" target="-2" id="KeG-zs-4By"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0f2-ai-EUT">
+                                <rect key="frame" x="70" y="-1" width="27" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="ZZE-vz-Ynz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Il8-ps-NDD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="zoomOut:" target="-2" id="YhD-tT-p11"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="97" id="Y0w-im-bg6"/>
+                            <constraint firstAttribute="height" constant="19" id="xQU-F8-NUd"/>
+                        </constraints>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="n29-0c-H4G" secondAttribute="bottom" constant="20" symbolic="YES" id="2nI-PY-z1V"/>
+                    <constraint firstItem="OSZ-ee-K0E" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="IPu-Mf-ox6"/>
+                    <constraint firstItem="n29-0c-H4G" firstAttribute="top" secondItem="OSZ-ee-K0E" secondAttribute="bottom" constant="19" id="e4u-fk-Wjg"/>
+                    <constraint firstAttribute="trailing" secondItem="n29-0c-H4G" secondAttribute="trailing" id="jPo-gN-Vn5"/>
+                    <constraint firstAttribute="trailing" secondItem="OSZ-ee-K0E" secondAttribute="trailing" id="l1f-Hj-Vf9"/>
+                    <constraint firstItem="OSZ-ee-K0E" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="ovl-YZ-Fjc"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="325" y="123"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSHomeTemplate" width="14" height="14"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+    </resources>
+</document>

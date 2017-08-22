@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ColoredLineChartViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="chartView0" destination="NBS-W0-9pA" id="CoV-cG-QY4"/>
+                <outlet property="chartView1" destination="H5i-co-3XG" id="97A-8K-wtY"/>
+                <outlet property="chartView2" destination="7hn-FI-ceo" id="cjv-cq-RsA"/>
+                <outlet property="chartView3" destination="BVH-RG-vEN" id="Xrv-OV-yV4"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="fdA-yB-Qrd"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="708" height="782"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="708" height="782"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NBS-W0-9pA" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="607" width="705" height="175"/>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="7hn-FI-ceo" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="255" width="705" height="175"/>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="H5i-co-3XG" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="432" width="705" height="175"/>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="BVH-RG-vEN" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="80" width="705" height="175"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NBS-W0-9pA" firstAttribute="leading" secondItem="H5i-co-3XG" secondAttribute="leading" id="5VT-sT-JCR"/>
+                    <constraint firstItem="NBS-W0-9pA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="8h1-n1-Xgq"/>
+                    <constraint firstItem="BVH-RG-vEN" firstAttribute="height" secondItem="7hn-FI-ceo" secondAttribute="height" id="DrM-ss-9Cg"/>
+                    <constraint firstItem="7hn-FI-ceo" firstAttribute="height" secondItem="H5i-co-3XG" secondAttribute="height" id="KcL-Mu-sI4"/>
+                    <constraint firstItem="7hn-FI-ceo" firstAttribute="width" secondItem="H5i-co-3XG" secondAttribute="width" id="Omu-vO-fZM"/>
+                    <constraint firstItem="7hn-FI-ceo" firstAttribute="leading" secondItem="BVH-RG-vEN" secondAttribute="leading" id="PYj-Od-k9f"/>
+                    <constraint firstItem="H5i-co-3XG" firstAttribute="height" secondItem="NBS-W0-9pA" secondAttribute="height" id="RXr-hc-q1j"/>
+                    <constraint firstItem="BVH-RG-vEN" firstAttribute="top" secondItem="7hn-FI-ceo" secondAttribute="bottom" id="UID-J1-YvK"/>
+                    <constraint firstItem="BVH-RG-vEN" firstAttribute="bottom" secondItem="EiT-Mj-1SZ" secondAttribute="bottom" constant="-80" id="Wp9-TG-aH9"/>
+                    <constraint firstItem="H5i-co-3XG" firstAttribute="width" secondItem="NBS-W0-9pA" secondAttribute="width" id="grt-6c-zPs"/>
+                    <constraint firstItem="7hn-FI-ceo" firstAttribute="top" secondItem="H5i-co-3XG" secondAttribute="bottom" constant="2" id="kvT-g8-kWQ"/>
+                    <constraint firstItem="H5i-co-3XG" firstAttribute="top" secondItem="NBS-W0-9pA" secondAttribute="bottom" id="oUK-Az-YCw"/>
+                    <constraint firstItem="BVH-RG-vEN" firstAttribute="width" secondItem="7hn-FI-ceo" secondAttribute="width" id="rbn-3v-W2N"/>
+                    <constraint firstAttribute="trailing" secondItem="NBS-W0-9pA" secondAttribute="trailing" constant="3" id="vI8-Uv-6HJ"/>
+                    <constraint firstItem="NBS-W0-9pA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="wSV-wT-UVg"/>
+                    <constraint firstItem="H5i-co-3XG" firstAttribute="leading" secondItem="7hn-FI-ceo" secondAttribute="leading" id="y81-8P-oSW"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-147" y="17"/>
+        </window>
+    </objects>
+</document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AlbumArtViewController" customModule="graphMeteo" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionButton" destination="i3q-tp-OkA" id="mfr-9k-oiM"/>
+                <outlet property="outlineButton" destination="ZRM-ji-jpr" id="7lg-1S-bfM"/>
+                <outlet property="view" destination="qj4-Jr-AdX" id="gz2-PY-sEB"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="albumArt" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-Jr-AdX">
+            <rect key="frame" x="0.0" y="0.0" width="161" height="161"/>
+            <subviews>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3q-tp-OkA">
+                    <rect key="frame" x="36" y="78" width="81" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="collection" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tMD-UU-3mN">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="radioButtonChanged:" target="-2" id="PTH-pb-11n"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRM-ji-jpr">
+                    <rect key="frame" x="39" y="110" width="63" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="outline" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="gG2-KN-aXe">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="radioButtonChanged:" target="-2" id="nlp-Cx-j4X"/>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-LC-UWA">
+                    <rect key="frame" x="38" y="35" width="76" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qWi-pH-tKW" id="fwk-Rm-R3y">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="h8Y-mK-9Nl">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="qWi-pH-tKW"/>
+                                <menuItem title="Item 2" id="KIm-pg-K8U"/>
+                                <menuItem title="Item 3" id="vL4-3l-Lrj"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="height" secondItem="qj4-Jr-AdX" secondAttribute="width" multiplier="1:1" priority="999" identifier="id00" id="hHZ-eU-DNG"/>
+            </constraints>
+            <point key="canvasLocation" x="95.5" y="119.5"/>
+        </customView>
+    </objects>
+</document>
