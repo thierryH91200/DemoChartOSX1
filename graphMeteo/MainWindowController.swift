@@ -23,6 +23,11 @@ enum TypeOfChart {
     case None
 }
 
+struct imageInfo {
+    var thumbnail: NSImage?
+    var fileName: String
+}
+
 class MainWindowController: NSWindowController , NSWindowDelegate {
     
     
@@ -34,28 +39,28 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     @IBOutlet weak var artToggle: NSButton!
     @IBOutlet weak var queueButton: NSButton!
     
-    var barChartViewController                    : BarChartViewController!
-    var barChartViewControllerColumnWithDrilldown : BarChartViewControllerColumnWithDrilldown!
-    var bubbleChartViewController                 : BubbleChartViewController!
-    var candleStickChartViewController            : CandleStickChartViewController!
-    var coloredLineChartViewController            : ColoredLineChartViewController!
-    var combinedChartViewController               : CombinedChartViewController!
-    var cubicLineChartViewController              : CubicLineChartViewController!
-    var halfPieChartViewController                : HalfPieChartViewController!
-    var horizontalBarChartViewController          : HorizontalBarChartViewController!
-    var lineChart1ViewController                  : LineChart1ViewController!
-    var lineChart2ViewController                  : LineChart2ViewController!
-    var lineChartFilledViewController             : LineChartFilledViewController!
-    var lineChartTimeViewController               : LineChartTimeViewController!
-    var multipleBarChartViewController            : MultipleBarChartViewController!
-    var negativeStackedBarChartViewController     : NegativeStackedBarChartViewController!
-    var pieChartViewController                    : PieChartViewController!
-    var piePolylineChartViewController            : PiePolylineChartViewController!
-    var positiveNegativeBarChartViewController    : PositiveNegativeBarChartViewController!
-    var radarChartViewController                  : RadarChartViewController!
-    var scatterChartViewController                : ScatterChartViewController!
-    var sinusBarChartViewController               : SinusBarChartViewController!
-    var stackedBarChartViewController             : StackedBarChartViewController!
+    var barChartViewController                    = BarChartViewController()
+    var barChartViewControllerColumnWithDrilldown = BarChartViewControllerColumnWithDrilldown()
+    var bubbleChartViewController                 = BubbleChartViewController()
+    var candleStickChartViewController            = CandleStickChartViewController()
+    var coloredLineChartViewController            = ColoredLineChartViewController()
+    var combinedChartViewController               = CombinedChartViewController()
+    var cubicLineChartViewController              = CubicLineChartViewController()
+    var halfPieChartViewController                = HalfPieChartViewController()
+    var horizontalBarChartViewController          = HorizontalBarChartViewController()
+    var lineChart1ViewController                  = LineChart1ViewController()
+    var lineChart2ViewController                  = LineChart2ViewController()
+    var lineChartFilledViewController             = LineChartFilledViewController()
+    var lineChartTimeViewController               = LineChartTimeViewController()
+    var multipleBarChartViewController            = MultipleBarChartViewController()
+    var negativeStackedBarChartViewController     = NegativeStackedBarChartViewController()
+    var pieChartViewController                    = PieChartViewController()
+    var piePolylineChartViewController            = PiePolylineChartViewController()
+    var positiveNegativeBarChartViewController    = PositiveNegativeBarChartViewController()
+    var radarChartViewController                  = RadarChartViewController()
+    var scatterChartViewController                = ScatterChartViewController()
+    var sinusBarChartViewController               = SinusBarChartViewController()
+    var stackedBarChartViewController             = StackedBarChartViewController()
     
     var sourceCollectionController      : SourceCollectionController?
     var sourceListViewController        : SourceListViewController?
@@ -83,7 +88,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     var typeOfChart : TypeOfChart = .None
     
-    
     var delegate: AppDelegate?
     
     override func windowDidLoad() {
@@ -103,190 +107,122 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func changeView(name: String, id : String)
     {
-        var  vc : NSView = NSView()
+        var  vc = NSView()
+        
         switch name
         {
         case "BarChartViewController":
-            if barChartViewController == nil {
-                barChartViewController = BarChartViewController()
-            }
-            vc = barChartViewController!.view
+            vc = barChartViewController.view
             barChartView = barChartViewController.chartView
             typeOfChart = .Bar
             
         case "BarChartViewControllerColumnWithDrilldown":
-            if barChartViewControllerColumnWithDrilldown == nil {
-                barChartViewControllerColumnWithDrilldown = BarChartViewControllerColumnWithDrilldown()
-            }
-            vc = barChartViewControllerColumnWithDrilldown!.view
+            vc = barChartViewControllerColumnWithDrilldown.view
             barChartView = barChartViewControllerColumnWithDrilldown.chartView
             typeOfChart = .Bar
             
         case "PositiveNegativeBarChartViewController":
-            if positiveNegativeBarChartViewController == nil {
-                positiveNegativeBarChartViewController = PositiveNegativeBarChartViewController()
-            }
-            vc = positiveNegativeBarChartViewController!.view
+            vc = positiveNegativeBarChartViewController.view
             barChartView = positiveNegativeBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "MultipleBarChartViewController":
-            if multipleBarChartViewController == nil {
-                multipleBarChartViewController = MultipleBarChartViewController()
-            }
-            vc = multipleBarChartViewController!.view
+            vc = multipleBarChartViewController.view
             barChartView = multipleBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "NegativeStackedBarChartViewController":
-            if negativeStackedBarChartViewController == nil {
-                negativeStackedBarChartViewController = NegativeStackedBarChartViewController()
-            }
-            vc = negativeStackedBarChartViewController!.view
+            vc = negativeStackedBarChartViewController.view
             barChartView = negativeStackedBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "HorizontalBarChartViewController":
-            if horizontalBarChartViewController == nil {
-                horizontalBarChartViewController = HorizontalBarChartViewController()
-            }
-            vc = horizontalBarChartViewController!.view
+            vc = horizontalBarChartViewController.view
             barChartView = horizontalBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "SinusBarChartViewController":
-            if sinusBarChartViewController == nil {
-                sinusBarChartViewController = SinusBarChartViewController()
-            }
-            vc = sinusBarChartViewController!.view
+            vc = sinusBarChartViewController.view
             barChartView = sinusBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "StackedBarChartViewController":
-            if stackedBarChartViewController == nil {
-                stackedBarChartViewController = StackedBarChartViewController()
-            }
-            vc = stackedBarChartViewController!.view
+            vc = stackedBarChartViewController.view
             barChartView = stackedBarChartViewController.chartView
             typeOfChart = .Bar
             
         case "BubbleChartViewController":
-            if bubbleChartViewController == nil {
-                bubbleChartViewController = BubbleChartViewController()
-            }
-            vc = bubbleChartViewController!.view
+            vc = bubbleChartViewController.view
             bubbleChartView = bubbleChartViewController.chartView
             typeOfChart = .Bubble
             
         case "CandleStickChartViewController":
-            if candleStickChartViewController == nil {
-                candleStickChartViewController = CandleStickChartViewController()
-            }
-            vc = candleStickChartViewController!.view
+            vc = candleStickChartViewController.view
             candleStickChartView = candleStickChartViewController.chartView
             typeOfChart = .CandleStick
             
         case "ColoredLineChartViewController":
-            if coloredLineChartViewController == nil {
-                coloredLineChartViewController = ColoredLineChartViewController()
-            }
-            vc = coloredLineChartViewController!.view
+            vc = coloredLineChartViewController.view
             //lineChartView = coloredLineChartViewController.chartView
             typeOfChart = .Line
             
         case "CubicLineChartViewController":
-            if cubicLineChartViewController == nil {
-                cubicLineChartViewController = CubicLineChartViewController()
-            }
-            vc = cubicLineChartViewController!.view
+            vc = cubicLineChartViewController.view
             lineChartView = cubicLineChartViewController.chartView
             typeOfChart = .Line
             
         case "LineChart1ViewController":
-            if lineChart1ViewController == nil {
-                lineChart1ViewController = LineChart1ViewController()
-            }
-            vc = lineChart1ViewController!.view
+            vc = lineChart1ViewController.view
             lineChartView = lineChart1ViewController.chartView
             typeOfChart = .Line
             
         case "LineChart2ViewController":
-            if lineChart2ViewController == nil {
-                lineChart2ViewController = LineChart2ViewController()
-            }
-            vc = lineChart2ViewController!.view
+            vc = lineChart2ViewController.view
             lineChartView = lineChart2ViewController.chartView
             typeOfChart = .Line
             
         case "LineChartFilledViewController":
-            if lineChartFilledViewController == nil {
-                lineChartFilledViewController = LineChartFilledViewController()
-            }
-            vc = lineChartFilledViewController!.view
+            vc = lineChartFilledViewController.view
             lineChartView = lineChartFilledViewController.chartView
             typeOfChart = .Line
             
         case "LineChartTimeViewController":
-            if lineChartTimeViewController == nil {
-                lineChartTimeViewController = LineChartTimeViewController()
-            }
-            vc = lineChartTimeViewController!.view
+            vc = lineChartTimeViewController.view
             lineChartView = lineChartTimeViewController.chartView
             typeOfChart = .Line
             
         case "CombinedChartViewController":
-            if combinedChartViewController == nil {
-                combinedChartViewController = CombinedChartViewController()
-            }
-            vc = combinedChartViewController!.view
+            vc = combinedChartViewController.view
             combinedChartView = combinedChartViewController.chartView
             typeOfChart = .Combined
             
         case "HalfPieChartViewController":
-            if halfPieChartViewController == nil {
-                halfPieChartViewController = HalfPieChartViewController()
-            }
-            vc = halfPieChartViewController!.view
+            vc = halfPieChartViewController.view
             pieChartView = halfPieChartViewController.chartView
             typeOfChart = .Pie
             
         case "PieChartViewController":
-            if pieChartViewController == nil {
-                pieChartViewController = PieChartViewController()
-            }
-            vc = pieChartViewController!.view
+            vc = pieChartViewController.view
             pieChartView = pieChartViewController.chartView
             typeOfChart = .Pie
             
         case "PiePolylineChartViewController":
-            if piePolylineChartViewController == nil {
-                piePolylineChartViewController = PiePolylineChartViewController()
-            }
-            vc = piePolylineChartViewController!.view
+            vc = piePolylineChartViewController.view
             pieChartView = piePolylineChartViewController.chartView
             typeOfChart = .Pie
             
         case "RadarChartViewController":
-            if radarChartViewController == nil {
-                radarChartViewController = RadarChartViewController()
-            }
-            vc = radarChartViewController!.view
+            vc = radarChartViewController.view
             radarChartView = radarChartViewController.chartView
             typeOfChart = .Radar
             
         case "ScatterChartViewController":
-            if scatterChartViewController == nil {
-                scatterChartViewController = ScatterChartViewController()
-            }
-            vc = scatterChartViewController!.view
+            vc = scatterChartViewController.view
             scatterChartView = scatterChartViewController.chartView
             typeOfChart = .Scatter
             
         default:
-            if barChartViewController == nil {
-                barChartViewController = BarChartViewController()
-            }
-            vc = barChartViewController!.view
+            vc = barChartViewController.view
         }
         
         addSubview(subView: vc, toView: chartTargetView)
@@ -352,6 +288,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             addSubview(subView: toggleViewController.view, toView: self.trackQueueView)
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
+            
         case .Scatter:
             let toggleViewController = self.toggleScatterViewController
             
@@ -375,7 +312,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func setUpLayoutConstraints(item : NSView, toItem: NSView)
     {
-        //item.translatesAutoresizingMaskIntoConstraints = false
+        item.translatesAutoresizingMaskIntoConstraints = false
         let sourceListLayoutConstraints = [
             NSLayoutConstraint(item: item, attribute: .left, relatedBy: .equal, toItem: toItem, attribute: .left, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: item, attribute: .right, relatedBy: .equal, toItem: toItem, attribute: .right, multiplier: 1, constant: 0),
@@ -384,20 +321,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
     
-    func addSubview(subView:NSView, toView parentView : NSView)
-    {
-        let myView = parentView.subviews
-        if myView.count > 0
-        {
-            parentView.replaceSubview(myView[0], with: subView)
-            print("replace View : ", subView)
-        }
-        else
-        {
-            parentView.addSubview(subView)
-            print("add View : ", subView)
-        }
-    }
     
     func setUpSourceList()
     {
@@ -407,6 +330,24 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             
             setUpLayoutConstraints(item: sourceCollectionController!.view, toItem: sourceListTargetView1)
             self.sourceCollectionController!.view.frame = sourceListTargetView1.bounds
+            
+//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
+//
+//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
+//
+//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
+//
+//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
+//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
+//
+//            sourceCollectionController?.collectionView.reloadData()
         }
         else
         {
@@ -426,8 +367,24 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         setUpLayoutConstraints(item: albumArtViewController!.view, toItem: albumArtView)
         self.albumArtViewController!.view.frame = albumArtView.bounds
         albumArtViewController?.mainWindowController = self
+        albumArtViewController?.loadAlbumArtWindow()
     }
     
+    func addSubview(subView:NSView, toView parentView : NSView)
+    {
+        let myView = parentView.subviews
+        if myView.count > 0
+        {
+            parentView.replaceSubview(myView[0], with: subView)
+            print("replace View : ", subView)
+        }
+        else
+        {
+            parentView.addSubview(subView)
+            print("add View : ", subView)
+        }
+    }
+
     @IBAction func toggleArtwork(_ sender: AnyObject) {
         if self.albumArtView.isHidden == false {
             artToggle.state = NSOffState

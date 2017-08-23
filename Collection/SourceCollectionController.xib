@@ -35,6 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="J8k-3D-ceP"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mr1-Pd-LBL"/>
+                    </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9zS-Uk-F7i">
                         <rect key="frame" x="1" y="223" width="471" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>

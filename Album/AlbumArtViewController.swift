@@ -14,9 +14,9 @@ class AlbumArtViewController: NSViewController {
     // @IBOutlet weak var albumArtView: DragAndDropImageView!
     
     @IBOutlet weak var collectionButton: NSButton!
-    
     @IBOutlet weak var outlineButton: NSButton!
     
+    @IBOutlet weak var imageView: NSImageView!
     
     var mainWindowController: MainWindowController?
     
@@ -26,13 +26,13 @@ class AlbumArtViewController: NSViewController {
         // Do view setup here.
         
         outlineButton.state = NSOnState
+        //loadAlbumArtWindow()
     }
     
     func loadAlbumArtWindow() {
         print("loading album art window")
-        //        self.artWindow = AlbumArtWindowController(windowNibName: "AlbumArtWindowController")
-        //        self.artWindow?.track = self.currentTrack
-        //        self.mainWindow?.window?.addChildWindow(self.artWindow!.window!, ordered: .above)
+        let image = mainWindowController?.radarChartViewController.view.image()
+        imageView.image = image
     }
     
     func toggleHidden(_ artworkToggle: Int)
@@ -50,6 +50,16 @@ class AlbumArtViewController: NSViewController {
         mainWindowController?.collection = collectionButton.state
         mainWindowController?.setUpSourceList()
     }
+}
 
+extension NSView {
     
+    /// Get `NSImage` representation of the view.
+    ///
+    /// - Returns: `NSImage` of view
+    func image() -> NSImage {
+        let imageRepresentation = bitmapImageRepForCachingDisplay(in: bounds)!
+        cacheDisplay(in: bounds, to: imageRepresentation)
+        return NSImage(cgImage: imageRepresentation.cgImage!, size: bounds.size)
+    }
 }

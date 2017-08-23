@@ -481,9 +481,9 @@
 				C3FC56251F4CA2ED0090991B /* HeaderView.swift */,
 				C3FC56261F4CA2ED0090991B /* HeaderView.xib */,
 				C3FC56291F4CA2EE0090991B /* ImageDirectoryLoader.swift */,
-				C3FC56221F4CA2ED0090991B /* SourceCollectionController.xib */,
 				C3FC56241F4CA2ED0090991B /* ImageFile.swift */,
 				C3FC56281F4CA2EE0090991B /* SourceCollectionController.swift */,
+				C3FC56221F4CA2ED0090991B /* SourceCollectionController.xib */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
