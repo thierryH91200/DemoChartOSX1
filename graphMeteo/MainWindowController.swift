@@ -11,26 +11,41 @@ import Charts
 
 let DEFAULTS_SHOWS_ARTWORK_STRING = "showsArtwork"
 
-enum TypeOfChart {
-    case Line
-    case Pie
-    case Radar
-    case Combined
-    case Bar
-    case Bubble
-    case Scatter
-    case CandleStick
-    case None
-}
 
 struct imageInfo {
     var thumbnail: NSImage?
     var fileName: String
+    var name: String
 }
 
 class MainWindowController: NSWindowController , NSWindowDelegate {
     
-    
+    enum TypeOfChart {
+        case bar
+        case bubble
+        case candleStick
+        case combined
+        case line
+        case pie
+        case radar
+        case scatter
+        case none
+        var label: String
+        {
+            switch self {
+            case .bar: return "Bar"
+            case .bubble: return "Bubble"
+            case .candleStick: return "CandleStick"
+            case .combined: return "Combined"
+            case .line: return "Line"
+            case .pie: return "Pie"
+            case .radar: return "Radar"
+            case .scatter: return "Scatter"
+            case .none: return "None"
+            }
+        }
+    }
+
     @IBOutlet weak var chartTargetView: NSView!
     @IBOutlet weak var sourceListTargetView1: NSView!
     @IBOutlet weak var trackQueueView: NSView!
@@ -86,7 +101,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     var collection : NSControlStateValue = NSOffState
     
-    var typeOfChart : TypeOfChart = .None
+    var typeOfChart : TypeOfChart = .none
     
     var delegate: AppDelegate?
     
@@ -114,112 +129,112 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         case "BarChartViewController":
             vc = barChartViewController.view
             barChartView = barChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "BarChartViewControllerColumnWithDrilldown":
             vc = barChartViewControllerColumnWithDrilldown.view
             barChartView = barChartViewControllerColumnWithDrilldown.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "PositiveNegativeBarChartViewController":
             vc = positiveNegativeBarChartViewController.view
             barChartView = positiveNegativeBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "MultipleBarChartViewController":
             vc = multipleBarChartViewController.view
             barChartView = multipleBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "NegativeStackedBarChartViewController":
             vc = negativeStackedBarChartViewController.view
             barChartView = negativeStackedBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "HorizontalBarChartViewController":
             vc = horizontalBarChartViewController.view
             barChartView = horizontalBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "SinusBarChartViewController":
             vc = sinusBarChartViewController.view
             barChartView = sinusBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "StackedBarChartViewController":
             vc = stackedBarChartViewController.view
             barChartView = stackedBarChartViewController.chartView
-            typeOfChart = .Bar
+            typeOfChart = .bar
             
         case "BubbleChartViewController":
             vc = bubbleChartViewController.view
             bubbleChartView = bubbleChartViewController.chartView
-            typeOfChart = .Bubble
+            typeOfChart = .bubble
             
         case "CandleStickChartViewController":
             vc = candleStickChartViewController.view
             candleStickChartView = candleStickChartViewController.chartView
-            typeOfChart = .CandleStick
+            typeOfChart = .candleStick
             
         case "ColoredLineChartViewController":
             vc = coloredLineChartViewController.view
             //lineChartView = coloredLineChartViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "CubicLineChartViewController":
             vc = cubicLineChartViewController.view
             lineChartView = cubicLineChartViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "LineChart1ViewController":
             vc = lineChart1ViewController.view
             lineChartView = lineChart1ViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "LineChart2ViewController":
             vc = lineChart2ViewController.view
             lineChartView = lineChart2ViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "LineChartFilledViewController":
             vc = lineChartFilledViewController.view
             lineChartView = lineChartFilledViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "LineChartTimeViewController":
             vc = lineChartTimeViewController.view
             lineChartView = lineChartTimeViewController.chartView
-            typeOfChart = .Line
+            typeOfChart = .line
             
         case "CombinedChartViewController":
             vc = combinedChartViewController.view
             combinedChartView = combinedChartViewController.chartView
-            typeOfChart = .Combined
+            typeOfChart = .combined
             
         case "HalfPieChartViewController":
             vc = halfPieChartViewController.view
             pieChartView = halfPieChartViewController.chartView
-            typeOfChart = .Pie
+            typeOfChart = .pie
             
         case "PieChartViewController":
             vc = pieChartViewController.view
             pieChartView = pieChartViewController.chartView
-            typeOfChart = .Pie
+            typeOfChart = .pie
             
         case "PiePolylineChartViewController":
             vc = piePolylineChartViewController.view
             pieChartView = piePolylineChartViewController.chartView
-            typeOfChart = .Pie
+            typeOfChart = .pie
             
         case "RadarChartViewController":
             vc = radarChartViewController.view
             radarChartView = radarChartViewController.chartView
-            typeOfChart = .Radar
+            typeOfChart = .radar
             
         case "ScatterChartViewController":
             vc = scatterChartViewController.view
             scatterChartView = scatterChartViewController.chartView
-            typeOfChart = .Scatter
+            typeOfChart = .scatter
             
         default:
             vc = barChartViewController.view
@@ -241,7 +256,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     {
         switch typeOfChart
         {
-        case .Line:
+        case .line:
             let toggleViewController = self.toggleLineViewController
             
             toggleViewController.chartView = lineChartView
@@ -249,7 +264,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Pie:
+        case .pie:
             let toggleViewController = self.togglePieViewController
             
             toggleViewController.chartView = pieChartView
@@ -257,7 +272,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Radar:
+        case .radar:
             let toggleViewController = self.toggleRadarViewController
             
             toggleViewController.chartView = radarChartView
@@ -265,7 +280,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Combined:
+        case .combined:
             let toggleViewController = self.toggleCombinedViewController
             
             toggleViewController.chartView = combinedChartView
@@ -273,7 +288,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Bar:
+        case .bar:
             let toggleViewController = self.toggleBarViewController
             
             toggleViewController.chartView = barChartView
@@ -281,7 +296,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Bubble:
+        case .bubble:
             let toggleViewController = self.toggleBubbleViewController
             
             toggleViewController.chartView = bubbleChartView
@@ -289,7 +304,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .Scatter:
+        case .scatter:
             let toggleViewController = self.toggleScatterViewController
             
             toggleViewController.chartView = scatterChartView
@@ -297,7 +312,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .CandleStick:
+        case .candleStick:
             let toggleViewController = self.toggleCandleStickViewController
             
             toggleViewController.chartView = candleStickChartView
@@ -305,7 +320,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
-        case .None:
+        case .none:
             break
         }
     }
@@ -321,7 +336,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
     
-    
     func setUpSourceList()
     {
         if collection == NSOnState
@@ -331,23 +345,23 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: sourceCollectionController!.view, toItem: sourceListTargetView1)
             self.sourceCollectionController!.view.frame = sourceListTargetView1.bounds
             
-//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
-//
-//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
-//
-//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
-//
-//            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "radarChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "pieChartViewController")
-//            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "halfPieChartViewController")
-//
-//            sourceCollectionController?.collectionView.reloadData()
+            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+
+            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+            
+            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+            
+            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
+            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+
+            sourceCollectionController?.collectionView.reloadData()
         }
         else
         {
@@ -401,15 +415,16 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     @IBAction func toggleExpandQueue(_ sender: AnyObject) {
         //trackQueueViewController!.toggleHidden(queueButton.state)
         switch queueButton.state {
-        case NSOnState:
+        case NSOnState, NSMixedState:
             trackQueueView.isHidden = false
             UserDefaults.standard.set(false, forKey: "queueHidden")
-        default:
+        case NSOffState:
             trackQueueView.isHidden = true
             UserDefaults.standard.set(true, forKey: "queueHidden")
+        default:
+            break
         }
     }
-
 }
 
 extension NSView {

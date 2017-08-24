@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30610301F4E75EC00D95D30 /* CollectionView.swift */; };
 		C3AE37A01F4C7D0B003AD9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */; };
 		C3AE37A21F4C7D0B003AD9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */; };
 		C3AE37A51F4C7D0B003AD9C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */; };
@@ -157,6 +158,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C30610301F4E75EC00D95D30 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../ChartsWorks/Charts.xcodeproj; sourceTree = "<group>"; };
 		C3AE379C1F4C7D0B003AD9C4 /* graphMeteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphMeteo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				C3FC56241F4CA2ED0090991B /* ImageFile.swift */,
 				C3FC56281F4CA2EE0090991B /* SourceCollectionController.swift */,
 				C3FC56221F4CA2ED0090991B /* SourceCollectionController.xib */,
+				C30610301F4E75EC00D95D30 /* CollectionView.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				C3FC55EA1F4C8C0D0090991B /* ColoredLineChartViewController.swift in Sources */,
 				C3FC55EF1F4C8C0D0090991B /* range.swift in Sources */,
 				C3FC55F71F4C8C0D0090991B /* StackedBarChartViewController.swift in Sources */,
+				C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */,
 				C3FC55AF1F4C8B800090991B /* RadarMarkerView.swift in Sources */,
 				C3FC55AE1F4C8B800090991B /* DateValueFormatter.swift in Sources */,
 				C3FC558E1F4C8AE70090991B /* SourceListViewController.swift in Sources */,

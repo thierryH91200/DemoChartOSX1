@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SourceCollectionController" customModule="graphMeteo">
+        <customObject id="-2" userLabel="File's Owner" customClass="SourceCollectionController" customModule="graphMeteo" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="SHq-2V-d66" id="xBx-27-jKl"/>
                 <outlet property="view" destination="iPG-5x-I4i" id="sew-t8-wHY"/>
@@ -36,8 +36,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="J8k-3D-ceP"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mr1-Pd-LBL"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="NdN-om-RwO"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="h7p-fw-qUU"/>
                     </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9zS-Uk-F7i">
                         <rect key="frame" x="1" y="223" width="471" height="16"/>
@@ -61,9 +61,9 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="UWf-Fk-8PP" secondAttribute="trailing" id="SiX-lv-Kyr"/>
-                <constraint firstItem="UWf-Fk-8PP" firstAttribute="leading" secondItem="iPG-5x-I4i" secondAttribute="leading" id="d1J-8C-uSQ"/>
+                <constraint firstAttribute="leading" secondItem="UWf-Fk-8PP" secondAttribute="leading" id="d1J-8C-uSQ"/>
                 <constraint firstAttribute="bottom" secondItem="UWf-Fk-8PP" secondAttribute="bottom" constant="30" id="gyo-v3-wUP"/>
-                <constraint firstItem="UWf-Fk-8PP" firstAttribute="top" secondItem="iPG-5x-I4i" secondAttribute="top" id="l5e-MA-Dhz"/>
+                <constraint firstAttribute="top" secondItem="UWf-Fk-8PP" secondAttribute="top" id="l5e-MA-Dhz"/>
                 <constraint firstItem="nZE-6K-gqj" firstAttribute="leading" secondItem="iPG-5x-I4i" secondAttribute="leading" constant="20" symbolic="YES" id="ufd-4z-xN3"/>
                 <constraint firstAttribute="bottom" secondItem="nZE-6K-gqj" secondAttribute="bottom" constant="8" id="vMG-XC-YJ4"/>
             </constraints>

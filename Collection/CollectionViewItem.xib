@@ -5,12 +5,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="graphMeteo">
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="graphMeteo" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
-        <collectionViewItem id="BO2-in-3JR" customClass="CollectionViewItem" customModule="subView2" customModuleProvider="target">
+        <collectionViewItem id="BO2-in-3JR" customClass="CollectionViewItem" customModule="graphMeteo" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="bf9-cB-xlw" id="jFH-kl-oxM"/>
                 <outlet property="textField" destination="Pne-0x-Fha" id="GkN-Ce-5Z8"/>
@@ -30,7 +30,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-0x-Fha">
                     <rect key="frame" x="-2" y="0.0" width="315" height="30"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="krr-I6-tFD">
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
