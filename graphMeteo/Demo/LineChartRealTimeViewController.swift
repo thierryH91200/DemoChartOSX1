@@ -27,7 +27,6 @@ class LineChartRealTimeViewController: NSViewController {
         view.window!.title = "Real Time Line"
     }
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
