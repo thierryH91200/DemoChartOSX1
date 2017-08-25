@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30610301F4E75EC00D95D30 /* CollectionView.swift */; };
+		C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */; };
+		C34661C11F506D0200E5FB3F /* LineChartRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */; };
 		C3AE37A01F4C7D0B003AD9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */; };
 		C3AE37A21F4C7D0B003AD9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */; };
 		C3AE37A51F4C7D0B003AD9C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */; };
@@ -158,6 +160,8 @@
 
 /* Begin PBXFileReference section */
 		C30610301F4E75EC00D95D30 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
+		C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartRealTimeViewController.xib; sourceTree = "<group>"; };
 		C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../ChartsWorks/Charts.xcodeproj; sourceTree = "<group>"; };
 		C3AE379C1F4C7D0B003AD9C4 /* graphMeteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphMeteo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				C3FC55C01F4C8C070090991B /* LineChart2ViewController.xib */,
 				C3FC55C61F4C8C080090991B /* LineChartFilledViewController.swift */,
 				C3FC55CF1F4C8C0A0090991B /* LineChartFilledViewController.xib */,
+				C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */,
+				C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */,
 				C3FC55BD1F4C8C070090991B /* LineChartTimeViewController.swift */,
 				C3FC55B91F4C8C070090991B /* LineChartTimeViewController.xib */,
 				C3FC55D51F4C8C0B0090991B /* MultipleBarChartViewController.swift */,
@@ -662,6 +668,7 @@
 				C3FC56311F4CA3600090991B /* ToggleCombinedViewController.xib in Resources */,
 				C3FC56321F4CA3600090991B /* ToggleLineViewController.xib in Resources */,
 				C3FC56331F4CA3600090991B /* TogglePieViewController.xib in Resources */,
+				C34661C11F506D0200E5FB3F /* LineChartRealTimeViewController.xib in Resources */,
 				C3FC56081F4C935E0090991B /* BarChartViewController.xib in Resources */,
 				C3AE37CD1F4C7F70003AD9C4 /* MainWindowController.xib in Resources */,
 				C3AE37A21F4C7D0B003AD9C4 /* Assets.xcassets in Resources */,
@@ -730,6 +737,7 @@
 				C3FC55AB1F4C8B800090991B /* XYMarkerView.swift in Sources */,
 				C3FC55F01F4C8C0D0090991B /* DemoBaseViewController.swift in Sources */,
 				C3FC558D1F4C8AE70090991B /* Feed.swift in Sources */,
+				C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */,
 				C3FC55AD1F4C8B800090991B /* LargeValueFormatter.swift in Sources */,
 				C3FC55F11F4C8C0D0090991B /* SinusBarChartViewController.swift in Sources */,
 				C3FC558F1F4C8AE70090991B /* FeedItem.swift in Sources */,

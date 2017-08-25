@@ -128,7 +128,6 @@ class SourceCollectionController: NSViewController {
         }
     }
     
-    
     func numberOfItemsInSection(_ section: Int) -> Int {
         print("sectionsAttributesArray[section].sectionLength ", sectionsAttributesArray[section].sectionLength)
         return sectionsAttributesArray[section].sectionLength

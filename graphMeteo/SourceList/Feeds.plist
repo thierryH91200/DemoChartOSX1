@@ -11,6 +11,16 @@
 		<array>
 			<dict>
 				<key>description</key>
+				<string></string>
+				<key>id</key>
+				<string>vc30</string>
+				<key>name</key>
+				<string>LineChartRealTimeViewController</string>
+				<key>type</key>
+				<string>Line Real Time</string>
+			</dict>
+			<dict>
+				<key>description</key>
 				<string>A simple demonstration of the linechart</string>
 				<key>id</key>
 				<string>vc1</string>
@@ -67,7 +77,7 @@
 				<key>name</key>
 				<string>ColoredLineChartViewController</string>
 				<key>type</key>
-				<string>Colored Line Chart View</string>
+				<string>Colored Line Chart</string>
 			</dict>
 		</array>
 	</dict>

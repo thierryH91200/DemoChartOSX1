@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LineChartRealTimeViewController" customModule="graphMeteo" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="ewu-Ar-XhF" id="ZSJ-qR-1ed"/>
+                <outlet property="time" destination="XCy-hy-6zB" id="eRe-hH-xfU"/>
+                <outlet property="view" destination="Arn-JX-UQJ" id="uF8-20-y7Y"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ulE-aH-pjG">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="750" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="Arn-JX-UQJ">
+                <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="ewu-Ar-XhF" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="68" width="750" height="432"/>
+                    </customView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SGf-Jr-yFv">
+                        <rect key="frame" x="235" y="19" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="USw-5X-UcE"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSPlayTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IT8-la-J02">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="playButton:" target="-2" id="oOI-zI-4th"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bc6-pM-0Cp">
+                        <rect key="frame" x="200" y="19" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="7oK-OV-X9u"/>
+                            <constraint firstAttribute="width" constant="30" id="yeh-U7-tJT"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSPauseTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QNb-WT-p2y">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pauseButton:" target="-2" id="gAq-tB-Cvc"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bmn-cV-wX5">
+                        <rect key="frame" x="270" y="19" width="28" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="c6k-sL-WBN"/>
+                            <constraint firstAttribute="height" constant="28" id="j4y-uD-yop"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSFastForwardTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Xj-wK-UY0">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="playFastButton:" target="-2" id="cIg-50-fYx"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-hy-6zB">
+                        <rect key="frame" x="496" y="31" width="37" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="HcA-Kw-Ais">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bc6-pM-0Cp" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="0Gc-u1-o89"/>
+                    <constraint firstItem="SGf-Jr-yFv" firstAttribute="bottom" secondItem="bc6-pM-0Cp" secondAttribute="bottom" id="9vB-5e-Pr4"/>
+                    <constraint firstItem="ewu-Ar-XhF" firstAttribute="top" secondItem="Arn-JX-UQJ" secondAttribute="top" id="C2I-6m-hxQ"/>
+                    <constraint firstItem="XCy-hy-6zB" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="CGQ-vf-ToD"/>
+                    <constraint firstItem="ewu-Ar-XhF" firstAttribute="leading" secondItem="Arn-JX-UQJ" secondAttribute="leading" id="F2A-TO-nsf"/>
+                    <constraint firstAttribute="bottom" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="68" id="FHs-DT-BfA"/>
+                    <constraint firstItem="SGf-Jr-yFv" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="Tvy-da-QYd"/>
+                    <constraint firstAttribute="trailing" secondItem="ewu-Ar-XhF" secondAttribute="trailing" id="UXa-C8-GcN"/>
+                    <constraint firstItem="bmn-cV-wX5" firstAttribute="leading" secondItem="SGf-Jr-yFv" secondAttribute="trailing" constant="5" id="hsm-2W-kAm"/>
+                    <constraint firstItem="XCy-hy-6zB" firstAttribute="leading" secondItem="bmn-cV-wX5" secondAttribute="trailing" constant="200" id="oUD-iE-h3v"/>
+                    <constraint firstItem="bmn-cV-wX5" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="q6N-4k-hcq"/>
+                    <constraint firstItem="bc6-pM-0Cp" firstAttribute="leading" secondItem="Arn-JX-UQJ" secondAttribute="leading" constant="200" id="tsk-tb-G0w"/>
+                    <constraint firstItem="SGf-Jr-yFv" firstAttribute="leading" secondItem="bc6-pM-0Cp" secondAttribute="trailing" constant="5" id="wHJ-vt-WGv"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="315" y="141"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSFastForwardTemplate" width="128" height="128"/>
+        <image name="NSPauseTemplate" width="128" height="128"/>
+        <image name="NSPlayTemplate" width="128" height="128"/>
+    </resources>
+</document>

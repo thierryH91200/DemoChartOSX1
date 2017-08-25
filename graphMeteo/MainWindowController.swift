@@ -94,6 +94,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     var scatterChartViewController                = ScatterChartViewController()
     var sinusBarChartViewController               = SinusBarChartViewController()
     var stackedBarChartViewController             = StackedBarChartViewController()
+    var lineChartRealTimeViewController           = LineChartRealTimeViewController()
     
     var sourceCollectionController      : SourceCollectionController?
     var sourceListViewController        : SourceListViewController?
@@ -255,6 +256,12 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             scatterChartView = scatterChartViewController.chartView
             typeOfChart = .scatter
             
+        case "LineChartRealTimeViewController":
+            vc = lineChartRealTimeViewController.view
+            lineChartView = lineChartRealTimeViewController.chartView
+            typeOfChart = .line
+            
+            
         default:
             vc = barChartViewController.view
         }
@@ -380,6 +387,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         imageInfo.append(ImageInfo(thumbnail: pieChartViewController.view.image(), nameController: "PieChartViewController", name: "Pie Chart", type: .pie))
         imageInfo.append(ImageInfo(thumbnail: piePolylineChartViewController.view.image(), nameController: "PiePolylineChartViewController", name: "Pie Polyline Chart", type: .pie))
         imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
+        imageInfo.append(ImageInfo(thumbnail: lineChartRealTimeViewController.view.image(), nameController: "LineChartRealTimeViewController", name: "Line Real Time Chart", type: .line))
         
         imageInfo = imageInfo.sorted (by: { $0.name < $1.name })
         imageInfo = imageInfo.sorted (by: { $0.type.label < $1.type.label })
@@ -412,7 +420,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpCollectionController()
             
             sourceCollectionController?.registerPlotItem(imageInfo: imageInfo)
-            
             sourceCollectionController?.collectionView.reloadData()
         }
         else
