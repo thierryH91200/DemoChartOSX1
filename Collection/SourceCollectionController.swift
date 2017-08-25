@@ -16,7 +16,7 @@ class SourceCollectionController: NSViewController {
     
     var mainWindowController: MainWindowController?
     
-    fileprivate var imageFiles = [ImageInfo]()
+    fileprivate var imageInfos = [ImageInfo]()
     fileprivate(set) var numberOfSections = 1
     var singleSectionMode = false
     
@@ -30,7 +30,7 @@ class SourceCollectionController: NSViewController {
     // sectionLengthArray[0] is 8, i.e. put the first 7 images from the imageFiles array into section 0
     // sectionLengthArray[1] is 1, i.e. put the next 5 images from the imageFiles array into section 1
     // and so on...
-    fileprivate let sectionLengthArray = [8, 1, 1, 1, 6, 3, 1, 1, 1, 25, 10, 3, 30, 25, 40]
+    fileprivate var sectionLengthArray = [8, 1, 1, 1, 6, 3, 1, 1, 1, 25, 10, 3, 30, 25, 40]
     fileprivate var sectionsAttributesArray = [SectionAttributes]()
     
     override func viewDidLoad() {
@@ -42,11 +42,11 @@ class SourceCollectionController: NSViewController {
     
     func registerPlotItem( imageInfo : [ImageInfo])
     {
-        if imageFiles.count > 0 {   // When not initial folder
-            imageFiles.removeAll()
+        if imageInfos.count > 0 {   // When not initial folder
+            imageInfos.removeAll()
         }
         
-        imageFiles = imageInfo
+        imageInfos = imageInfo
         setupData()
     }
     
@@ -54,8 +54,8 @@ class SourceCollectionController: NSViewController {
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = NSSize(width: 140.0, height: 120.0)
         flowLayout.sectionInset = EdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
-        flowLayout.minimumInteritemSpacing = 10.0
-        flowLayout.minimumLineSpacing = 10.0
+        flowLayout.minimumInteritemSpacing = 5.0
+        flowLayout.minimumLineSpacing = 5.0
         flowLayout.sectionHeadersPinToVisibleBounds = true
         collectionView.collectionViewLayout = flowLayout
         view.wantsLayer = true
@@ -79,18 +79,32 @@ class SourceCollectionController: NSViewController {
     }
     
     fileprivate func setupDataForSingleSectionMode() {
-        let sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: imageFiles.count, sectionName: "")
+        let sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: imageInfos.count, sectionName: "")
         sectionsAttributesArray.append(sectionAttributes) // sets up attributes for first section
     }
     
     fileprivate func setupDataForMultiSectionMode() {
         
-        let haveOneSection = singleSectionMode || sectionLengthArray.count < 2 || imageFiles.count <= sectionLengthArray[0]
-        var realSectionLength = haveOneSection ? imageFiles.count : sectionLengthArray[0]
-        var sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: realSectionLength, sectionName: imageFiles[0].type.label)
+        let haveOneSection = singleSectionMode || sectionLengthArray.count < 2 || imageInfos.count <= sectionLengthArray[0]
+        var realSectionLength = haveOneSection ? imageInfos.count : sectionLengthArray[0]
+        var sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: realSectionLength, sectionName: imageInfos[0].type.label)
         sectionsAttributesArray.append(sectionAttributes) // sets up attributes for first section
         
         guard !haveOneSection else {return}
+
+        let arrayFromDic = Array(imageInfos.map{ $0.type.label })
+        
+        var counts: [String: Int] = [:]
+        for item in arrayFromDic {
+            counts[item] = (counts[item] ?? 0) + 1
+        }
+        let countsSorted = counts.sorted(by: { $0.0 < $1.0 })
+        sectionLengthArray.removeAll()
+        
+        for countSorted in countsSorted
+        {
+            sectionLengthArray.append(countSorted.value)
+        }
         
         var offset: Int
         var nextOffset: Int
@@ -99,13 +113,13 @@ class SourceCollectionController: NSViewController {
             numberOfSections += 1
             offset = sectionsAttributesArray[i-1].sectionOffset + sectionsAttributesArray[i-1].sectionLength
             nextOffset = offset + sectionLengthArray[i]
-            if imageFiles.count <= nextOffset {
-                realSectionLength = imageFiles.count - offset
+            if imageInfos.count <= nextOffset {
+                realSectionLength = imageInfos.count - offset
                 nextOffset = -1 // signal this is last section for this collection
             } else {
                 realSectionLength = sectionLengthArray[i]
             }
-            let sectionName = imageFiles[offset].type.label
+            let sectionName = imageInfos[offset].type.label
             sectionAttributes = SectionAttributes(sectionOffset: offset, sectionLength: realSectionLength, sectionName: sectionName)
             sectionsAttributesArray.append(sectionAttributes)
             if nextOffset < 0 {
@@ -122,7 +136,7 @@ class SourceCollectionController: NSViewController {
     
     func imageFileForIndexPath(_ indexPath: IndexPath) -> ImageInfo {
         let imageIndexInImageFiles = sectionsAttributesArray[indexPath.section].sectionOffset + indexPath.item
-        let imageInfo = imageFiles[imageIndexInImageFiles]
+        let imageInfo = imageInfos[imageIndexInImageFiles]
         return imageInfo
     }
     

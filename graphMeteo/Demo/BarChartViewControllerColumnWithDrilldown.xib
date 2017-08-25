@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BarChartViewControllerColumnWithDrilldown" customModule="graphMeteo">
             <connections>
+                <outlet property="backToBrands" destination="r5b-bZ-Tyi" id="1wa-iX-0Dv"/>
                 <outlet property="chartView" destination="fJh-hW-yyt" id="8lc-BK-Cx8"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="LKr-j3-ea7"/>
             </connections>
@@ -86,14 +87,27 @@
                             <real value="3.4028234663852886e+38"/>
                         </customSpacing>
                     </stackView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r5b-bZ-Tyi">
+                        <rect key="frame" x="364" y="37" width="132" height="32"/>
+                        <buttonCell key="cell" type="push" title="Back to Brands" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qt5-1O-2Yq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="actionBack:" target="-2" id="0ie-DM-fG4"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NvE-BB-mPL" firstAttribute="trailing" secondItem="fJh-hW-yyt" secondAttribute="trailing" id="Bcc-5L-jk8"/>
                     <constraint firstItem="fJh-hW-yyt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="Q0l-Nv-aOU"/>
+                    <constraint firstAttribute="bottom" secondItem="r5b-bZ-Tyi" secondAttribute="bottom" constant="44" id="dmU-0u-gmv"/>
                     <constraint firstAttribute="trailing" secondItem="NvE-BB-mPL" secondAttribute="trailing" id="jsc-se-Nar"/>
                     <constraint firstItem="fJh-hW-yyt" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="m1f-vM-JOo"/>
                     <constraint firstAttribute="bottom" secondItem="NvE-BB-mPL" secondAttribute="bottom" constant="45" id="nrw-9q-xhS"/>
                     <constraint firstItem="NvE-BB-mPL" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="27" id="the-SI-vGo"/>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="370" id="xaM-Yt-aNW"/>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="26" id="zvH-6F-ZSl"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="213" y="244"/>

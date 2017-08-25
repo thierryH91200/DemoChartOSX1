@@ -16,7 +16,7 @@ import Charts
 open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
 {
     @IBOutlet var chartView: BarChartView!
-//    @IBOutlet var mainMenu: NSMenu!
+    @IBOutlet weak var backToBrands: NSButton!
     
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -47,74 +47,6 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
     override open func viewDidLoad()
     {
         super.viewDidLoad()
-//        let options = [["label": "Back to Brands"],
-//                       ["label": "separator"],
-//                       ["label": "Zoom In"],
-//                       ["label": "Zoom out"],
-//                       ["label": "Reset Zoom"],
-//                       ["label": "separator"],
-//                       ["label": "Toggle Values"],
-//                       
-//                       ["label": "begin insert"],
-//                       ["label": "linear"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInQuad"],
-//                       ["label": "easeOutQuad"],
-//                       ["label": "easeInOutQuad"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInCubic"],
-//                       ["label": "easeOutCubic"],
-//                       ["label": "easeInOutCubic"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInQuart"],
-//                       ["label": "easeOutQuart"],
-//                       ["label": "easeInOutQuart"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInQuint"],
-//                       ["label": "easeOutQuint"],
-//                       ["label": "easeInOutQuint"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInSine"],
-//                       ["label": "easeOutSine"],
-//                       ["label": "easeInOutSine"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInExpo"],
-//                       ["label": "easeOutExpo"],
-//                       ["label": "easeInOutExpo"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInCirc"],
-//                       ["label": "easeOutCirc"],
-//                       ["label": "easeInOutCirc"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInElastic"],
-//                       ["label": "easeOutElastic"],
-//                       ["label": "easeInOutElastic"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInBack"],
-//                       ["label": "easeOutBack"],
-//                       ["label": "easeInOutBack"],
-//                       ["label": "separator"],
-//                       
-//                       ["label": "easeInBounce"],
-//                       ["label": "easeOutBounce"],
-//                       ["label": "easeInOutBounce"],
-//                       
-//                       ["label": "end insert"],
-//                       ["label": "Animate ..."],
-//                       
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Toggle PinchZoom"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
         
         if let filePath = Bundle.main.path(forResource: "drillDown", ofType: "plist")
         {
@@ -127,61 +59,7 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
             dataWebIE.append(browser.y)
         }
         
-//        let subMenu = NSMenu()
-//        mainMenu.removeAllItems()
-//        subMenu.removeAllItems()
-//        var subMenuEnabled = false
-//        var addSubMenuEnable = false
-//        for option in options
-//        {
-//            switch (option["label"]!)
-//            {
-//            case "separator" :
-//                if subMenuEnabled == false && addSubMenuEnable == false
-//                {
-//                    mainMenu.addItem(NSMenuItem.separator())
-//                }
-//                else
-//                {
-//                    subMenu.addItem(NSMenuItem.separator())
-//                }
-//                
-//            case "begin insert" :
-//                subMenu.removeAllItems()
-//                subMenuEnabled = true
-//                
-//            case "end insert" :
-//                subMenuEnabled =  false
-//                addSubMenuEnable =  true
-//                
-//            default:
-//                if subMenuEnabled == false && addSubMenuEnable == false
-//                {
-//                    mainMenu.addItem(withTitle: option["label"]!, action: #selector(optionTapped(sender:)), keyEquivalent: "")
-//                }
-//                else
-//                {
-//                    if subMenuEnabled == true && addSubMenuEnable == false
-//                    {
-//                        subMenu.addItem(withTitle: option["label"]!, action: #selector(optionTapped(sender:)), keyEquivalent: "")
-//                    }
-//                    else
-//                    {
-//                        addSubMenuEnable =  false
-//                        let subMenuItem = NSMenuItem(title: option["label"]!, action: nil, keyEquivalent: "")
-//                        mainMenu.addItem(subMenuItem)
-//                        mainMenu.setSubmenu(subMenu, for: subMenuItem)
-//                    }
-//                }
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-//        
-//        mainMenu.autoenablesItems = false
-//        mainMenu.item(at: 0)?.isEnabled = false
+        backToBrands.isEnabled = false
         
           // MARK: General
         chartView.delegate = self
@@ -279,15 +157,13 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
         chartView.data = data
     }
     
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//            
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
+    @IBAction func actionBack(_ sender: Any) {
+        
+        backToBrands.isEnabled = false
+        chartView.chartDescription?.text = "Browsers"
+        setData(data : dataWebIE, label: label, colors: colors)
+    }
+    
     
     // Zoom Buttons
     @IBAction func zoomAll(_ sender: AnyObject)
@@ -326,7 +202,7 @@ extension BarChartViewControllerColumnWithDrilldown: ChartViewDelegate
         {
             return
         }
- //       mainMenu.item(at: 0)?.isEnabled = true
+        backToBrands.isEnabled = true
         chartView.chartDescription?.text = browsers[index].name
         setData(data : dataW, label : label, colors : [colors[index]])
         

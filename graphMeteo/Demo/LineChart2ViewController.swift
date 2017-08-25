@@ -140,11 +140,11 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         // MARK: description
         chartView.chartDescription?.enabled = false
         
-//        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSUIFont.systemFont(ofSize: CGFloat(12.0)), insets: EdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
-//        marker.chartView = chartView
-//        marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
-//        chartView.marker = marker
-//
+        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSUIFont.systemFont(ofSize: CGFloat(12.0)), insets: EdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        marker.chartView = chartView
+        marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
+        chartView.marker = marker
+
         sliderX.doubleValue = 40.0
         sliderY.doubleValue = 30.0
         slidersValueChanged(sliderX)
@@ -182,7 +182,6 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         var set4 = LineChartDataSet()
         if chartView.data != nil
         {
-            
             set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
             set2 = (chartView.data?.dataSets[1] as? LineChartDataSet)!
             set3 = (chartView.data?.dataSets[2] as? LineChartDataSet)!

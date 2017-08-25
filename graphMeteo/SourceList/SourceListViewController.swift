@@ -146,7 +146,7 @@ extension SourceListViewController: NSOutlineViewDelegate
                 if let textField = view?.textField
                 {
                     textField.stringValue = feedItem.type
-                    //textField.textColor = NSUIColor.black
+                    textField.textColor = NSColor.black
                 }
             }
         }

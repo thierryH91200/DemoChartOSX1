@@ -90,13 +90,13 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-23-xqc" userLabel="Repeat Button">
+                    <button toolTip="Toggle outline / collection" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-23-xqc" userLabel="outline collection Button">
                         <rect key="frame" x="72" y="4" width="44" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="PRo-qA-k4d"/>
                             <constraint firstAttribute="width" constant="44" id="wAQ-FL-cXz"/>
                         </constraints>
-                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSIconViewTemplate" imagePosition="only" alignment="center" alternateImage="RepeatAlternate" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rwf-QT-Uav">
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSIconViewTemplate" imagePosition="only" alignment="center" alternateImage="NSListViewTemplate" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rwf-QT-Uav">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -229,11 +229,11 @@
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSFlowViewTemplate" width="18" height="10"/>
         <image name="NSIconViewTemplate" width="10" height="10"/>
+        <image name="NSListViewTemplate" width="14" height="10"/>
         <image name="NSRevealFreestandingTemplate" width="14" height="14"/>
         <image name="NSTouchBarUserTemplate" width="17" height="30"/>
         <image name="Queue" width="200" height="231"/>
         <image name="Queue Alternate" width="200" height="231"/>
-        <image name="RepeatAlternate" width="176" height="214"/>
         <image name="Shuffle" width="202" height="219"/>
         <image name="ShuffleAlternate" width="202" height="219"/>
     </resources>
