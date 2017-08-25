@@ -46,8 +46,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         // MARK: General
         chartView.delegate                  = self
         chartView.pinchZoomEnabled          = false
-        chartView.drawBarShadowEnabled      = false
         chartView.doubleTapToZoomEnabled    = false
+        chartView.drawBarShadowEnabled      = false
         chartView.drawGridBackgroundEnabled = true
         chartView.fitBars                   = true
         chartView.drawValueAboveBarEnabled = true

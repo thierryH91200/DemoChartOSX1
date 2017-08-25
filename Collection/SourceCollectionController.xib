@@ -50,7 +50,7 @@
                 </scrollView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="nZE-6K-gqj">
                     <rect key="frame" x="18" y="6" width="112" height="18"/>
-                    <buttonCell key="cell" type="check" title="Show Sections" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tj8-Td-bpf">
+                    <buttonCell key="cell" type="check" title="Show Sections" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="tj8-Td-bpf">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

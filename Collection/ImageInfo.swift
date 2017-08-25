@@ -26,42 +26,19 @@
 
 import Cocoa
 
-class ImageFile : NSObject
+struct ImageInfo
 {
     fileprivate(set) var thumbnail: NSImage?
-    fileprivate(set) var fileName: String
+    fileprivate(set) var nameController: String
+    fileprivate(set) var name: String
+    fileprivate(set) var type : TypeOfChart
     
-    init?(thumbnail : NSImage, fileName: String)
+    init(thumbnail : NSImage, nameController: String, name: String, type: TypeOfChart )
     {
-        self.fileName = fileName
         self.thumbnail = thumbnail
-        
+        self.nameController = nameController
+        self.name = name
+        self.type = type
     }
 }
-
-//class ImageFile {
-//    
-//    fileprivate(set) var thumbnail: NSImage?
-//    fileprivate(set) var fileName: String
-//    
-//    init?(url: URL) {
-//        fileName = url.lastPathComponent
-//        thumbnail = nil
-//        let imageSource = CGImageSourceCreateWithURL(url.absoluteURL as CFURL, nil)
-//        if let imageSource = imageSource {
-//            guard CGImageSourceGetType(imageSource) != nil else { return }
-//            let thumbnailOptions = [
-//                String(kCGImageSourceCreateThumbnailFromImageIfAbsent): true,
-//                String(kCGImageSourceCreateThumbnailWithTransform): true,
-//                String(kCGImageSourceThumbnailMaxPixelSize): 120
-//                ] as [String : Any]
-//            if let thumbnailRef = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, thumbnailOptions as CFDictionary?) {
-//                thumbnail = NSImage(cgImage: thumbnailRef, size: NSSize.zero)
-//            } else {
-//                return nil
-//            }
-//        }
-//    }
-//    
-//}
 

@@ -9,13 +9,30 @@
 import Cocoa
 import Charts
 
-let DEFAULTS_SHOWS_ARTWORK_STRING = "showsArtwork"
-
-
-struct imageInfo {
-    var thumbnail: NSImage?
-    var fileName: String
-    var name: String
+enum TypeOfChart {
+    case bar
+    case bubble
+    case candleStick
+    case combined
+    case line
+    case pie
+    case radar
+    case scatter
+    case none
+    var label: String
+    {
+        switch self {
+        case .bar: return "Bar"
+        case .bubble: return "Bubble"
+        case .candleStick: return "CandleStick"
+        case .combined: return "Combined"
+        case .line: return "Line"
+        case .pie: return "Pie"
+        case .radar: return "Radar"
+        case .scatter: return "Scatter"
+        case .none: return "None"
+        }
+    }
 }
 
 class MainWindowController: NSWindowController , NSWindowDelegate {
@@ -45,7 +62,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             }
         }
     }
-
+    
     @IBOutlet weak var chartTargetView: NSView!
     @IBOutlet weak var sourceListTargetView1: NSView!
     @IBOutlet weak var trackQueueView: NSView!
@@ -53,6 +70,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     @IBOutlet weak var artToggle: NSButton!
     @IBOutlet weak var queueButton: NSButton!
+    @IBOutlet weak var collectionButton: NSButton!
     
     var barChartViewController                    = BarChartViewController()
     var barChartViewControllerColumnWithDrilldown = BarChartViewControllerColumnWithDrilldown()
@@ -102,6 +120,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     var collection : NSControlStateValue = NSOffState
     
     var typeOfChart : TypeOfChart = .none
+    var imageInfo   = [ImageInfo]()
     
     var delegate: AppDelegate?
     
@@ -336,6 +355,51 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         NSLayoutConstraint.activate(sourceListLayoutConstraints)
     }
     
+    func setUpCollectionController()
+    {
+        imageInfo.removeAll()
+        imageInfo.append(ImageInfo(thumbnail: radarChartViewController.view.image(), nameController: "RadarChartViewController", name: "Radar Chart", type: .radar))
+        imageInfo.append(ImageInfo(thumbnail: barChartViewControllerColumnWithDrilldown.view.image(), nameController: "BarChartViewControllerColumnWithDrilldown", name: "Bar Chart with DrillDown", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: barChartViewController.view.image(), nameController: "BarChartViewController", name: "Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: positiveNegativeBarChartViewController.view.image(), nameController: "PositiveNegativeBarChartViewController", name: "Positive Negative Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: multipleBarChartViewController.view.image(), nameController: "MultipleBarChartViewController", name: "Multiple Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: negativeStackedBarChartViewController.view.image(), nameController: "NegativeStackedBarChartViewController", name: "Negative Stacked Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: horizontalBarChartViewController.view.image(), nameController: "HorizontalBarChartViewController", name: "Horizontal Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: sinusBarChartViewController.view.image(), nameController: "SinusBarChartViewController", name: "Sinus Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: stackedBarChartViewController.view.image(), nameController: "StackedBarChartViewController", name: "Stacked Bar Chart", type: .bar))
+        imageInfo.append(ImageInfo(thumbnail: bubbleChartViewController.view.image(), nameController: "BubbleChartViewController", name: "Bubble Chart", type: .bubble))
+        imageInfo.append(ImageInfo(thumbnail: candleStickChartViewController.view.image(), nameController: "CandleStickChartViewController", name: "CandleStick Chart", type: .candleStick))
+        imageInfo.append(ImageInfo(thumbnail: coloredLineChartViewController.view.image(), nameController: "ColoredLineChartViewController", name: "Colored Line Chart", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: cubicLineChartViewController.view.image(), nameController: "CubicLineChartViewController", name: "Cubic Line Chart", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: lineChart1ViewController.view.image(), nameController: "LineChart1ViewController", name: "Line Chart1", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: lineChart2ViewController.view.image(), nameController: "LineChart2ViewController", name: "Line Chart2", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: lineChartFilledViewController.view.image(), nameController: "LineChartFilledViewController", name: "Line Chart Filled", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: lineChartTimeViewController.view.image(), nameController: "LineChartTimeViewController", name: "Line Chart Time", type: .line))
+        imageInfo.append(ImageInfo(thumbnail: combinedChartViewController.view.image(), nameController: "CombinedChartViewController", name: "Combined Chart", type: .combined))
+        imageInfo.append(ImageInfo(thumbnail: halfPieChartViewController.view.image(), nameController: "HalfPieChartViewController", name: "Half Pie Chart", type: .pie))
+        imageInfo.append(ImageInfo(thumbnail: pieChartViewController.view.image(), nameController: "PieChartViewController", name: "Pie Chart", type: .pie))
+        imageInfo.append(ImageInfo(thumbnail: piePolylineChartViewController.view.image(), nameController: "PiePolylineChartViewController", name: "Pie Polyline Chart", type: .pie))
+        imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
+        
+        imageInfo = imageInfo.sorted (by: { $0.name < $1.name })
+        imageInfo = imageInfo.sorted (by: { $0.type.label < $1.type.label })
+        
+        
+//        imageInfo = imageInfo.sorted (by: { (c1, c2) -> Bool in
+//            if c1.name < c2.name
+//            {
+//                return true
+//            } else
+//                if c1.name > c2.name
+//                {
+//                    return false
+//                } else if c1.type.label < c2.type.label {
+//                    return true
+//            }
+//            return false
+//        })
+    }
+    
     func setUpSourceList()
     {
         if collection == NSOnState
@@ -345,22 +409,10 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: sourceCollectionController!.view, toItem: sourceListTargetView1)
             self.sourceCollectionController!.view.frame = sourceListTargetView1.bounds
             
-            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
-
-            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+            setUpCollectionController()
             
-            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
+            sourceCollectionController?.registerPlotItem(imageInfo: imageInfo)
             
-            sourceCollectionController?.registerPlotItem(thumbnail: radarChartViewController.view.image(), fileName: "RadarChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: pieChartViewController.view.image(), fileName: "PieChartViewController")
-            sourceCollectionController?.registerPlotItem(thumbnail: halfPieChartViewController.view.image(), fileName: "HalfPieChartViewController")
-
             sourceCollectionController?.collectionView.reloadData()
         }
         else
@@ -398,15 +450,15 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             print("add View : ", subView)
         }
     }
-
+    
     @IBAction func toggleArtwork(_ sender: AnyObject) {
         if self.albumArtView.isHidden == false {
             artToggle.state = NSOffState
-            UserDefaults.standard.set(false, forKey: DEFAULTS_SHOWS_ARTWORK_STRING)
+            UserDefaults.standard.set(false, forKey: "showsArtwork")
             self.albumArtView.isHidden = true
         } else {
             artToggle.state = NSOnState
-            UserDefaults.standard.set(true, forKey: DEFAULTS_SHOWS_ARTWORK_STRING)
+            UserDefaults.standard.set(true, forKey: "showsArtwork")
             self.albumArtView.isHidden = false
         }
     }
@@ -425,13 +477,19 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             break
         }
     }
+    
+    @IBAction func toggleCollection(_ sender: Any) {
+        
+        collection = collectionButton.state
+        setUpSourceList()
+    }
 }
 
 extension NSView {
     
     override open var description: String {
         let id = identifier //?? ""
-        return "id: \(String(describing: id))" //\(self.description)" //you may print whatever you want here
+        return "id: \(String(describing: id))"
     }
 }
 

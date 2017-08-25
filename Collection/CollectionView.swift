@@ -8,19 +8,20 @@
 
 import Cocoa
 
-class CollectionView: NSCollectionView {
+//class CollectionView: NSCollectionView {
+//
+//    override func draw(_ dirtyRect: NSRect) {
+//        super.draw(dirtyRect)
+//
+//        // Drawing code here.
+//    }
+//    
+//    override func deselectItems(at indexPaths: Set<IndexPath>) {
+//        super.deselectItems(at: indexPaths)
+//        let viewController = delegate as! SourceCollectionController
+//        viewController.highlightItems(selected: false, atIndexPaths: indexPaths)
+//    }
+//
+//    
+//}
 
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
-    
-    override func deselectItems(at indexPaths: Set<IndexPath>) {
-        super.deselectItems(at: indexPaths)
-        let viewController = delegate as! SourceCollectionController
-        viewController.highlightItems(selected: false, atIndexPaths: indexPaths)
-    }
-
-    
-}

@@ -39,12 +39,12 @@ class CollectionViewItem: NSCollectionViewItem {
         view.layer?.borderWidth = selected ? 5.0 : 0.0
     }
 
-    var imageFile: ImageFile? {
+    var imageInfo: ImageInfo? {
         didSet {
             guard isViewLoaded else { return }
-            if let imageFile = imageFile {
-                imageView?.image = imageFile.thumbnail
-                textField?.stringValue = imageFile.fileName
+            if let imageInfo = imageInfo {
+                imageView?.image = imageInfo.thumbnail
+                textField?.stringValue = imageInfo.name
             } else {
                 imageView?.image = nil
                 textField?.stringValue = ""
@@ -59,5 +59,4 @@ class CollectionViewItem: NSCollectionViewItem {
         view.layer?.borderColor = NSColor.red.cgColor
         view.layer?.borderWidth = 0.0
     }
-    
 }

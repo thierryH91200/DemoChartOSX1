@@ -10,16 +10,11 @@ import Cocoa
 
 class AlbumArtViewController: NSViewController {
     
-    @IBOutlet var albumArtBox: NSBox!
-    // @IBOutlet weak var albumArtView: DragAndDropImageView!
-    
     @IBOutlet weak var collectionButton: NSButton!
     @IBOutlet weak var outlineButton: NSButton!
-    
     @IBOutlet weak var imageView: NSImageView!
     
     var mainWindowController: MainWindowController?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +28,6 @@ class AlbumArtViewController: NSViewController {
         print("loading album art window")
         let image = mainWindowController?.radarChartViewController.view.image()
         imageView.image = image
-    }
-    
-    func toggleHidden(_ artworkToggle: Int)
-    {
-        if artworkToggle == 1 {
-            albumArtBox.isHidden = false
-        }
-        else
-        {
-            albumArtBox.isHidden = true
-        }
     }
     
     @IBAction func radioButtonChanged(_ sender: AnyObject) {
