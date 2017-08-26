@@ -416,9 +416,15 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
         imageInfo.append(ImageInfo(thumbnail: lineChartRealTimeViewController.view.image(), nameController: "LineChartRealTimeViewController", name: "Line Real Time Chart", type: .line))
         
-        // not very good the sort
-        imageInfo = imageInfo.sorted (by: { $0.name < $1.name })
-        imageInfo = imageInfo.sorted (by: { $0.type.label < $1.type.label })
+        //  good the sort multiple-criteria
+        imageInfo = imageInfo.sorted (by:{
+            if $0.type.label != $1.type.label {
+                return $0.type.label < $1.type.label
+            }
+            else {
+                return $0.name < $1.name
+            }
+        })
     }
     
     func setUpSourceList()
@@ -526,8 +532,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         barLineChartViewBase?.data?.notifyDataChanged()
         barLineChartViewBase?.notifyDataSetChanged()
     }
-    
-
 }
 
 // just for the debug
