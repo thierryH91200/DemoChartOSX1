@@ -56,16 +56,16 @@ open class CombinedChartViewController: NSViewController
         leftAxis.drawGridLinesEnabled       = false
         leftAxis.axisMinimum                = 0.0
         
-        leftAxis.nameAxis = "left Axis"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "left Axis"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
         let rightAxis                       = chartView.rightAxis
         rightAxis.drawGridLinesEnabled      = false
         rightAxis.axisMinimum               = 0.0
         
-        rightAxis.nameAxis = "right Axis"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "right Axis"
+//        rightAxis.nameAxisEnabled = true
     
         // MARK: legend
         let legend                          = chartView.legend

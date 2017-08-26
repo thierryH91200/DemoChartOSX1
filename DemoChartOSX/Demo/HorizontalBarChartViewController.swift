@@ -54,8 +54,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         xAxis.drawGridLinesEnabled = true
         xAxis.granularity = 0.0
         
-        xAxis.nameAxis = "Name Axis X"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name Axis X"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -65,8 +65,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.axisMinimum = 0.0
         
-        leftAxis.nameAxis = "Left name"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Left name"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
@@ -77,11 +77,11 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         rightAxis.drawGridLinesEnabled = true
         rightAxis.axisMinimum          = 0.0
         
-        rightAxis.nameAxis = "Right Name"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Right Name"
+//        rightAxis.nameAxisEnabled = true
         
-        chartView.leftAxis1.axisSecondaryEnabled = false
-        chartView.rightAxis1.axisSecondaryEnabled = false
+//        chartView.leftAxis1.axisSecondaryEnabled = false
+//        chartView.rightAxis1.axisSecondaryEnabled = false
         
         // MARK: legend
         let legend = chartView.legend

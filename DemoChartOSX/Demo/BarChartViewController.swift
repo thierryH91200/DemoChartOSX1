@@ -61,8 +61,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         xAxis.granularity          = 1
         xAxis.labelPosition  = .bottom
         
-        xAxis.nameAxis = "Day"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Day"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
@@ -70,19 +70,19 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled  = false
         leftAxis.valueFormatter       = HourValueFormatter()
         
-        leftAxis.nameAxis = "Hour (s)"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Hour (s)"
+//        leftAxis.nameAxisEnabled = true
         
-        chartView.leftAxis1.enabled = false
-        chartView.rightAxis1.enabled = false
+//        chartView.leftAxis1.enabled = false
+//        chartView.rightAxis1.enabled = false
         
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
         rightAxis.drawGridLinesEnabled = true
         rightAxis.valueFormatter       = HourValueFormatter()
         
-        rightAxis.nameAxis = "Hour (s)"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Hour (s)"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
         let legend = chartView.legend

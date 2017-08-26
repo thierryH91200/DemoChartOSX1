@@ -52,8 +52,8 @@ open class LineChartFilledViewController: DemoBaseViewController
         xAxis.labelCount = 7
         xAxis.granularity = 1
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -64,8 +64,8 @@ open class LineChartFilledViewController: DemoBaseViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.axisLineColor = NSUIColor.black
         
-        leftAxis.nameAxis = "left Axis"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "left Axis"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false

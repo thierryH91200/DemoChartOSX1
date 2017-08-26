@@ -15,7 +15,7 @@ import Charts
 
 open class PieChartViewController: NSViewController
 {
-    @IBOutlet var chartView: RadiusPieChartView!
+    @IBOutlet var chartView: PieChartView!
     
     override open func viewDidAppear()
     {

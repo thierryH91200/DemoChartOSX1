@@ -52,8 +52,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         
         chartView.scaleYEnabled = false
         chartView.scaleXEnabled = true
-        chartView.dragYEnabled = false
-        chartView.dragXEnabled = true
+//        chartView.dragYEnabled = false
+//        chartView.dragXEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
@@ -64,8 +64,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         xAxis.labelPosition = .bottom
         xAxis.labelRotationAngle = 0
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -78,12 +78,12 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled = false
         leftAxis.granularityEnabled = false
         
-        leftAxis.nameAxis = "Name Principal"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Name Principal"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
-        let leftAxis1 = chartView.leftAxis1
-        leftAxis1.axisSecondaryEnabled = true
+        let leftAxis1 = chartView.leftAxis
+//        leftAxis1.axisSecondaryEnabled = true
 
         leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         leftAxis1.axisMaximum = 1200
@@ -92,8 +92,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         leftAxis1.drawZeroLineEnabled = false
         leftAxis1.granularityEnabled = false
 
-        leftAxis1.nameAxis = "Name Secondaire"
-        leftAxis1.nameAxisEnabled = true
+//        leftAxis1.nameAxis = "Name Secondaire"
+//        leftAxis1.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
@@ -105,12 +105,12 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         rightAxis.drawGridLinesEnabled = false
         rightAxis.granularityEnabled = false
         
-        rightAxis.nameAxis = "Name Principal"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Name Principal"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: rightAxis1
-        let rightAxis1 = chartView.rightAxis1
-        rightAxis1.axisSecondaryEnabled = true
+        let rightAxis1 = chartView.rightAxis
+//        rightAxis1.axisSecondaryEnabled = true
 
         rightAxis1.labelTextColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
         rightAxis1.axisMaximum = 500.0
@@ -118,8 +118,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         rightAxis1.drawGridLinesEnabled = false
         rightAxis1.granularityEnabled = false
         
-        rightAxis1.nameAxis = "Name Secondaire"
-        rightAxis1.nameAxisEnabled = true
+//        rightAxis1.nameAxis = "Name Secondaire"
+//        rightAxis1.nameAxisEnabled = true
         
         //        self.chartView.leftAxis.resetCustomAxisMin()
         //        self.chartView.leftAxis.resetCustomAxisMax()
@@ -216,7 +216,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set1.highlightEnabled = true
             
             set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
-            set2.axisDependency = .left1
+            set2.axisDependency = .left
             set2.colors = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
             set2.circleColors = [NSUIColor.white]
             set2.lineWidth = 2.0
@@ -247,7 +247,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set3.drawHorizontalHighlightIndicatorEnabled = false
             
             set4 = LineChartDataSet(values: yVals4, label: "DataSet 4")
-            set4.axisDependency = .right1
+            set4.axisDependency = .right
             set4.colors = [#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
             set4.circleColors = [NSUIColor.white]
             set4.lineWidth = 2.0

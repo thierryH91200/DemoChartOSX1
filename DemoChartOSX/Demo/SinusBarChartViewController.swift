@@ -52,8 +52,8 @@ open class SinusBarChartViewController: DemoBaseViewController
         xAxis.drawGridLinesEnabled = false
         xAxis.enabled = true
         
-        xAxis.nameAxis = "Date"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Date"
+//        xAxis.nameAxisEnabled = true
 
          // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -64,13 +64,13 @@ open class SinusBarChartViewController: DemoBaseViewController
         leftAxis.granularityEnabled = true
         leftAxis.granularity = 0.1
         
-        leftAxis.nameAxis = "Amplitude"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Amplitude"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
-        rightAxis.nameAxisEnabled = false
+//        rightAxis.nameAxisEnabled = false
         
         // MARK: legend
         let legend = chartView.legend

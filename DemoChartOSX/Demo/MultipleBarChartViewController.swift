@@ -53,8 +53,8 @@ open class MultipleBarChartViewController: DemoBaseViewController
         xAxis.gridLineWidth = 2.0
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -66,31 +66,31 @@ open class MultipleBarChartViewController: DemoBaseViewController
         leftAxis.spaceTop = 0.35
         leftAxis.axisMinimum = 0
         
-        leftAxis.nameAxis = "Company A"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Company A"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
-        let leftAxis1 = chartView.leftAxis1
+        let leftAxis1 = chartView.leftAxis
         leftAxis1.valueFormatter = LargeValueFormatter()
         leftAxis1.axisMaximum = 10000000
         leftAxis1.axisMinimum = 0
         leftAxis1.drawGridLinesEnabled = false
-        leftAxis1.axisSecondaryEnabled = true
+//        leftAxis1.axisSecondaryEnabled = true
         leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        leftAxis1.nameAxis = "Company B"
-        leftAxis1.nameAxisEnabled = true
+//        leftAxis1.nameAxis = "Company B"
+//        leftAxis1.nameAxisEnabled = true
         
-        let rightAxis1 = chartView.rightAxis1
+        let rightAxis1 = chartView.rightAxis
         rightAxis1.valueFormatter = LargeValueFormatter()
         rightAxis1.axisMinimum = 0
         rightAxis1.axisMaximum = 10000000
         rightAxis1.drawGridLinesEnabled = false
-        rightAxis1.axisSecondaryEnabled = true
+//        rightAxis1.axisSecondaryEnabled = true
         rightAxis1.labelTextColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
         
-        rightAxis1.nameAxis = "Company 🎲"
-        rightAxis1.nameAxisEnabled = true
+//        rightAxis1.nameAxis = "Company 🎲"
+//        rightAxis1.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
@@ -100,8 +100,8 @@ open class MultipleBarChartViewController: DemoBaseViewController
         rightAxis.enabled = true
         rightAxis.labelTextColor = #colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)
         
-        rightAxis.nameAxis = "Company C😐"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Company C😐"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
         let legend = chartView.legend
@@ -194,7 +194,7 @@ open class MultipleBarChartViewController: DemoBaseViewController
             
             set2 = BarChartDataSet(values: yVals2, label: "Company B")
             set2.colors = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
-            set2.axisDependency = .left1
+            set2.axisDependency = .left
             
             set3 = BarChartDataSet(values: yVals3, label: "Company C")
             set3.colors = [#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
@@ -202,7 +202,7 @@ open class MultipleBarChartViewController: DemoBaseViewController
             
             set4 = BarChartDataSet(values: yVals4, label: "Company D")
             set4.colors = [#colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)]
-            set4.axisDependency = .right1
+            set4.axisDependency = .right
             
             var dataSets = [BarChartDataSet]()
             dataSets.append(set1)

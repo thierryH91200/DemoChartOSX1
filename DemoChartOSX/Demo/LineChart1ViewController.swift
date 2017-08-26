@@ -77,8 +77,8 @@ open class LineChart1ViewController: DemoBaseViewController
         xAxis.gridLineDashPhase = 0.0
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Date (s)"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Date (s)"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         // leftAxis limit line
@@ -109,8 +109,8 @@ open class LineChart1ViewController: DemoBaseViewController
         leftAxis.drawZeroLineEnabled = false
         leftAxis.drawLimitLinesBehindDataEnabled = true
         
-        leftAxis.nameAxis = "Temperature (°C)"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Temperature (°C)"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false

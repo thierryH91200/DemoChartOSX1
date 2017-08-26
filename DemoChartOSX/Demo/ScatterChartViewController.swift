@@ -44,16 +44,16 @@ open class ScatterChartViewController: NSViewController
         xAxis.drawGridLinesEnabled = true
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Normal Name"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Normal Name"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = NSUIFont(name: "HelveticaNeue-Light", size: 10.0)!
         leftAxis.axisMinimum = 0.0
         
-        leftAxis.nameAxis = "Left name"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Left name"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false

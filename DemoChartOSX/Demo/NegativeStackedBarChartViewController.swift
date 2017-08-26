@@ -49,8 +49,8 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         xAxis.granularity = 1
         xAxis.valueFormatter = IndexAxisValueFormatter(values: categories)
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         chartView.leftAxis.enabled = false
@@ -72,8 +72,8 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter : customFormatter)
         rightAxis.labelFont = NSUIFont.systemFont(ofSize: CGFloat(9.0))
         
-        rightAxis.nameAxis = "Name rightAxis"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Name rightAxis"
+//        rightAxis.nameAxisEnabled = true
 
         // MARK: legend
         let legend = chartView.legend

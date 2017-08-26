@@ -46,8 +46,8 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         xAxis.axisMaximum          = 120.0
         xAxis.axisMinimum          = 0.0
         
-        xAxis.nameAxis = "Impact"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Impact"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
@@ -55,15 +55,15 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled  = true
         leftAxis.axisMaximum          = 10.0
         
-        leftAxis.nameAxis = "Probability"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Probability"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
         rightAxis.enabled = false
         
-        chartView.leftAxis1.enabled = false
-        chartView.rightAxis1.enabled = false
+//        chartView.leftAxis1.enabled = false
+//        chartView.rightAxis1.enabled = false
         
         // MARK: legend
         let legend = chartView.legend
