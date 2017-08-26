@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="albumArtView" destination="M4o-nI-Oef" id="KXN-5N-RhA"/>
                 <outlet property="artToggle" destination="aLT-7j-MYS" id="a5Z-qO-WeK"/>
-                <outlet property="chartTargetView" destination="wUo-rb-c1E" id="xRL-TO-4OS"/>
+                <outlet property="chartTargetView" destination="XSh-5z-7Wt" id="bgo-Ug-sYK"/>
                 <outlet property="collectionButton" destination="eg4-23-xqc" id="g9k-IR-ucI"/>
                 <outlet property="queueButton" destination="gzN-xP-Utz" id="a28-hf-6RT"/>
                 <outlet property="sourceListTargetView1" destination="NBm-y3-IWU" id="suz-O5-6iZ"/>
@@ -64,6 +64,20 @@
                             <splitView fixedFrame="YES" placeholderIntrinsicWidth="500" placeholderIntrinsicHeight="568" arrangesAllSubviews="NO" autosaveName="Library Split View" dividerStyle="thin" id="wUo-rb-c1E" userLabel="Library Split View">
                                 <rect key="frame" x="251" y="0.0" width="1179" height="976"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="XSh-5z-7Wt">
+                                        <rect key="frame" x="0.0" y="0.0" width="1179" height="888"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="dfy-zY-WS6">
+                                        <rect key="frame" x="0.0" y="889" width="1179" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
                             </splitView>
                             <customView fixedFrame="YES" id="267-Gg-sLE">
                                 <rect key="frame" x="1431" y="0.0" width="252" height="976"/>

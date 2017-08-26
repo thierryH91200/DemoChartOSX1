@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30610301F4E75EC00D95D30 /* CollectionView.swift */; };
+		C328964A1F5181B2000A7E51 /* CustomChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32896481F5181B2000A7E51 /* CustomChart.swift */; };
+		C328964B1F5181B2000A7E51 /* CustomChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32896491F5181B2000A7E51 /* CustomChart.xib */; };
 		C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */; };
 		C34661C11F506D0200E5FB3F /* LineChartRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */; };
 		C362F94A1F514113004B21E2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37583E61F4CCDC600FC5531 /* Charts.framework */; };
@@ -170,6 +172,8 @@
 
 /* Begin PBXFileReference section */
 		C30610301F4E75EC00D95D30 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		C32896481F5181B2000A7E51 /* CustomChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChart.swift; sourceTree = "<group>"; };
+		C32896491F5181B2000A7E51 /* CustomChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomChart.xib; sourceTree = "<group>"; };
 		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
 		C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartRealTimeViewController.xib; sourceTree = "<group>"; };
 		C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../ChartsWorks/Charts.xcodeproj; sourceTree = "<group>"; };
@@ -327,9 +331,6 @@
 			children = (
 				C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */,
 				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
-				C3FC562A1F4CA2F40090991B /* Collection */,
-				C3FC56211F4CA2260090991B /* Toggle */,
-				C37583EB1F4CCDFD00FC5531 /* Album */,
 				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
 				C3AE37BA1F4C7D0B003AD9C4 /* DemoChartOSXUITests */,
 				C3AE379D1F4C7D0B003AD9C4 /* Products */,
@@ -349,16 +350,21 @@
 		C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */ = {
 			isa = PBXGroup;
 			children = (
+				C3FC55FD1F4C8C450090991B /* Demo */,
 				C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */,
 				C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */,
 				C3AE37A71F4C7D0B003AD9C4 /* DemoChartOSX.entitlements */,
+				C3FC55B31F4C8B920090991B /* Formatters */,
 				C3AE37A61F4C7D0B003AD9C4 /* Info.plist */,
 				C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */,
 				C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */,
 				C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */,
-				C3FC55B31F4C8B920090991B /* Formatters */,
-				C3FC55FD1F4C8C450090991B /* Demo */,
+				C3FC562A1F4CA2F40090991B /* Collection */,
+				C37583EB1F4CCDFD00FC5531 /* Album */,
 				C3FC55901F4C8AF60090991B /* SourceList */,
+				C3FC56211F4CA2260090991B /* Toggle */,
+				C32896481F5181B2000A7E51 /* CustomChart.swift */,
+				C32896491F5181B2000A7E51 /* CustomChart.xib */,
 			);
 			path = DemoChartOSX;
 			sourceTree = "<group>";
@@ -673,6 +679,7 @@
 				C3FC56511F4CB3790090991B /* HeaderView.xib in Resources */,
 				C3FC562B1F4CA3600090991B /* AlbumArtViewController.xib in Resources */,
 				C3FC562C1F4CA3600090991B /* ToggleBarViewController.xib in Resources */,
+				C328964B1F5181B2000A7E51 /* CustomChart.xib in Resources */,
 				C3FC562D1F4CA3600090991B /* ToggleBubbleViewController.xib in Resources */,
 				C3FC562E1F4CA3600090991B /* ToggleCandleStickViewController.xib in Resources */,
 				C3FC562F1F4CA3600090991B /* ToggleRadarViewController.xib in Resources */,
@@ -734,6 +741,7 @@
 				C3AE37CC1F4C7E80003AD9C4 /* MainWindowController.swift in Sources */,
 				C3FC561A1F4CA21D0090991B /* ToggleBarViewController.swift in Sources */,
 				C3FC561E1F4CA21D0090991B /* ToggleBubbleViewController.swift in Sources */,
+				C328964A1F5181B2000A7E51 /* CustomChart.swift in Sources */,
 				C3FC55AC1F4C8B800090991B /* YMarkerView.swift in Sources */,
 				C3FC55EA1F4C8C0D0090991B /* ColoredLineChartViewController.swift in Sources */,
 				C3FC55EF1F4C8C0D0090991B /* range.swift in Sources */,
