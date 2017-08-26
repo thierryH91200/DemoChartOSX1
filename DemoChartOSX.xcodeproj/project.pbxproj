@@ -21,6 +21,7 @@
 		C3AE37BC1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37BB1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift */; };
 		C3AE37CC1F4C7E80003AD9C4 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */; };
 		C3AE37CD1F4C7F70003AD9C4 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */; };
+		C3B791191F51BA5A0051C1D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C3B791171F51BA5A0051C1D4 /* README.md */; };
 		C3FB45541F4F2C6F002A291C /* SourceCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB45531F4F2C6F002A291C /* SourceCollectionController.swift */; };
 		C3FC558D1F4C8AE70090991B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC558A1F4C8AE70090991B /* Feed.swift */; };
 		C3FC558E1F4C8AE70090991B /* SourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC558B1F4C8AE70090991B /* SourceListViewController.swift */; };
@@ -184,6 +185,7 @@
 		C3AE37BD1F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		C3B791171F51BA5A0051C1D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C3FB45531F4F2C6F002A291C /* SourceCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCollectionController.swift; sourceTree = "<group>"; };
 		C3FC55881F4C8AE70090991B /* Feeds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
 		C3FC55891F4C8AE70090991B /* SourceListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceListViewController.xib; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		C3AE37931F4C7D0B003AD9C4 = {
 			isa = PBXGroup;
 			children = (
+				C3B791171F51BA5A0051C1D4 /* README.md */,
 				C37847D21F519FE30038D6A9 /* Charts.xcodeproj */,
 				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
 				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
@@ -658,6 +661,7 @@
 				C3FC564B1F4CB3790090991B /* RadarChartViewController.xib in Resources */,
 				C3FC564C1F4CB3790090991B /* ScatterChartViewController.xib in Resources */,
 				C3FC564D1F4CB3790090991B /* SinusBarChartViewController.xib in Resources */,
+				C3B791191F51BA5A0051C1D4 /* README.md in Resources */,
 				C3FC564E1F4CB3790090991B /* StackedBarChartViewController.xib in Resources */,
 				C3FC564F1F4CB3790090991B /* SourceListViewController.xib in Resources */,
 				C3FC56501F4CB3790090991B /* CollectionViewItem.xib in Resources */,
