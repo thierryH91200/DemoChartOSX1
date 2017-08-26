@@ -88,6 +88,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     var lineChart1ViewController                  = LineChart1ViewController()
     var lineChart2ViewController                  = LineChart2ViewController()
     var lineChartFilledViewController             = LineChartFilledViewController()
+    var lineChartRealTimeViewController           = LineChartRealTimeViewController()
     var lineChartTimeViewController               = LineChartTimeViewController()
     var multipleBarChartViewController            = MultipleBarChartViewController()
     var negativeStackedBarChartViewController     = NegativeStackedBarChartViewController()
@@ -98,7 +99,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     var scatterChartViewController                = ScatterChartViewController()
     var sinusBarChartViewController               = SinusBarChartViewController()
     var stackedBarChartViewController             = StackedBarChartViewController()
-    var lineChartRealTimeViewController           = LineChartRealTimeViewController()
     
     var sourceCollectionController      : SourceCollectionController?
     var sourceListViewController        : SourceListViewController?
