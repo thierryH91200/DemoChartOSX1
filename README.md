@@ -2,4 +2,4 @@
 Demo Chart OSX
 
 
-just a deemo for chart
+just a demo for chart
