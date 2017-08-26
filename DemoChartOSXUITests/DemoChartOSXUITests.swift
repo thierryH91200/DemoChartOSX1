@@ -1,6 +1,6 @@
 //
-//  graphMeteoUITests.swift
-//  graphMeteoUITests
+//  DemoChartOSXUITests.swift
+//  DemoChartOSXUITests
 //
 //  Created by thierryH24100 on 22/08/2017.
 //  Copyright © 2017 thierryH24100. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class graphMeteoUITests: XCTestCase {
+class DemoChartOSXUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

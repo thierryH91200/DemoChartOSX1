@@ -10,11 +10,13 @@
 		C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30610301F4E75EC00D95D30 /* CollectionView.swift */; };
 		C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */; };
 		C34661C11F506D0200E5FB3F /* LineChartRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */; };
+		C362F94A1F514113004B21E2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37583E61F4CCDC600FC5531 /* Charts.framework */; };
+		C362F94B1F514113004B21E2 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C37583E61F4CCDC600FC5531 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3AE37A01F4C7D0B003AD9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */; };
 		C3AE37A21F4C7D0B003AD9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */; };
 		C3AE37A51F4C7D0B003AD9C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */; };
-		C3AE37B11F4C7D0B003AD9C4 /* graphMeteoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37B01F4C7D0B003AD9C4 /* graphMeteoTests.swift */; };
-		C3AE37BC1F4C7D0B003AD9C4 /* graphMeteoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37BB1F4C7D0B003AD9C4 /* graphMeteoUITests.swift */; };
+		C3AE37B11F4C7D0B003AD9C4 /* DemoChartOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37B01F4C7D0B003AD9C4 /* DemoChartOSXTests.swift */; };
+		C3AE37BC1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37BB1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift */; };
 		C3AE37CC1F4C7E80003AD9C4 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */; };
 		C3AE37CD1F4C7F70003AD9C4 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */; };
 		C3FB45541F4F2C6F002A291C /* SourceCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB45531F4F2C6F002A291C /* SourceCollectionController.swift */; };
@@ -108,6 +110,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C362F94C1F514113004B21E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		C37583E51F4CCDC600FC5531 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */;
@@ -152,6 +161,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C362F94B1F514113004B21E2 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,17 +173,17 @@
 		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
 		C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartRealTimeViewController.xib; sourceTree = "<group>"; };
 		C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../ChartsWorks/Charts.xcodeproj; sourceTree = "<group>"; };
-		C3AE379C1F4C7D0B003AD9C4 /* graphMeteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphMeteo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChartOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3AE37A41F4C7D0B003AD9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C3AE37A61F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3AE37A71F4C7D0B003AD9C4 /* graphMeteo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = graphMeteo.entitlements; sourceTree = "<group>"; };
-		C3AE37AC1F4C7D0B003AD9C4 /* graphMeteoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graphMeteoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3AE37B01F4C7D0B003AD9C4 /* graphMeteoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = graphMeteoTests.swift; sourceTree = "<group>"; };
+		C3AE37A71F4C7D0B003AD9C4 /* DemoChartOSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoChartOSX.entitlements; sourceTree = "<group>"; };
+		C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoChartOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE37B01F4C7D0B003AD9C4 /* DemoChartOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChartOSXTests.swift; sourceTree = "<group>"; };
 		C3AE37B21F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3AE37B71F4C7D0B003AD9C4 /* graphMeteoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graphMeteoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3AE37BB1F4C7D0B003AD9C4 /* graphMeteoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = graphMeteoUITests.swift; sourceTree = "<group>"; };
+		C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoChartOSXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE37BB1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChartOSXUITests.swift; sourceTree = "<group>"; };
 		C3AE37BD1F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -272,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C362F94A1F514113004B21E2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +326,12 @@
 			isa = PBXGroup;
 			children = (
 				C37583DF1F4CCDC600FC5531 /* Charts.xcodeproj */,
-				C3AE379E1F4C7D0B003AD9C4 /* graphMeteo */,
+				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
 				C3FC562A1F4CA2F40090991B /* Collection */,
 				C3FC56211F4CA2260090991B /* Toggle */,
 				C37583EB1F4CCDFD00FC5531 /* Album */,
-				C3AE37AF1F4C7D0B003AD9C4 /* graphMeteoTests */,
-				C3AE37BA1F4C7D0B003AD9C4 /* graphMeteoUITests */,
+				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
+				C3AE37BA1F4C7D0B003AD9C4 /* DemoChartOSXUITests */,
 				C3AE379D1F4C7D0B003AD9C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -328,19 +339,19 @@
 		C3AE379D1F4C7D0B003AD9C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3AE379C1F4C7D0B003AD9C4 /* graphMeteo.app */,
-				C3AE37AC1F4C7D0B003AD9C4 /* graphMeteoTests.xctest */,
-				C3AE37B71F4C7D0B003AD9C4 /* graphMeteoUITests.xctest */,
+				C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX.app */,
+				C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSXTests.xctest */,
+				C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3AE379E1F4C7D0B003AD9C4 /* graphMeteo */ = {
+		C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */ = {
 			isa = PBXGroup;
 			children = (
 				C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */,
 				C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */,
-				C3AE37A71F4C7D0B003AD9C4 /* graphMeteo.entitlements */,
+				C3AE37A71F4C7D0B003AD9C4 /* DemoChartOSX.entitlements */,
 				C3AE37A61F4C7D0B003AD9C4 /* Info.plist */,
 				C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */,
 				C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */,
@@ -349,25 +360,25 @@
 				C3FC55FD1F4C8C450090991B /* Demo */,
 				C3FC55901F4C8AF60090991B /* SourceList */,
 			);
-			path = graphMeteo;
+			path = DemoChartOSX;
 			sourceTree = "<group>";
 		};
-		C3AE37AF1F4C7D0B003AD9C4 /* graphMeteoTests */ = {
+		C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */ = {
 			isa = PBXGroup;
 			children = (
-				C3AE37B01F4C7D0B003AD9C4 /* graphMeteoTests.swift */,
+				C3AE37B01F4C7D0B003AD9C4 /* DemoChartOSXTests.swift */,
 				C3AE37B21F4C7D0B003AD9C4 /* Info.plist */,
 			);
-			path = graphMeteoTests;
+			path = DemoChartOSXTests;
 			sourceTree = "<group>";
 		};
-		C3AE37BA1F4C7D0B003AD9C4 /* graphMeteoUITests */ = {
+		C3AE37BA1F4C7D0B003AD9C4 /* DemoChartOSXUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C3AE37BB1F4C7D0B003AD9C4 /* graphMeteoUITests.swift */,
+				C3AE37BB1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift */,
 				C3AE37BD1F4C7D0B003AD9C4 /* Info.plist */,
 			);
-			path = graphMeteoUITests;
+			path = DemoChartOSXUITests;
 			sourceTree = "<group>";
 		};
 		C3FC55901F4C8AF60090991B /* SourceList */ = {
@@ -497,9 +508,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C3AE379B1F4C7D0B003AD9C4 /* graphMeteo */ = {
+		C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteo" */;
+			buildConfigurationList = C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX" */;
 			buildPhases = (
 				C3AE37981F4C7D0B003AD9C4 /* Sources */,
 				C3AE37991F4C7D0B003AD9C4 /* Frameworks */,
@@ -509,15 +520,16 @@
 			buildRules = (
 			);
 			dependencies = (
+				C362F94D1F514113004B21E2 /* PBXTargetDependency */,
 			);
-			name = graphMeteo;
+			name = DemoChartOSX;
 			productName = graphMeteo;
-			productReference = C3AE379C1F4C7D0B003AD9C4 /* graphMeteo.app */;
+			productReference = C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C3AE37AB1F4C7D0B003AD9C4 /* graphMeteoTests */ = {
+		C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSXTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteoTests" */;
+			buildConfigurationList = C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSXTests" */;
 			buildPhases = (
 				C3AE37A81F4C7D0B003AD9C4 /* Sources */,
 				C3AE37A91F4C7D0B003AD9C4 /* Frameworks */,
@@ -528,14 +540,14 @@
 			dependencies = (
 				C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */,
 			);
-			name = graphMeteoTests;
+			name = DemoChartOSXTests;
 			productName = graphMeteoTests;
-			productReference = C3AE37AC1F4C7D0B003AD9C4 /* graphMeteoTests.xctest */;
+			productReference = C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C3AE37B61F4C7D0B003AD9C4 /* graphMeteoUITests */ = {
+		C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSXUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteoUITests" */;
+			buildConfigurationList = C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSXUITests" */;
 			buildPhases = (
 				C3AE37B31F4C7D0B003AD9C4 /* Sources */,
 				C3AE37B41F4C7D0B003AD9C4 /* Frameworks */,
@@ -546,9 +558,9 @@
 			dependencies = (
 				C3AE37B91F4C7D0B003AD9C4 /* PBXTargetDependency */,
 			);
-			name = graphMeteoUITests;
+			name = DemoChartOSXUITests;
 			productName = graphMeteoUITests;
-			productReference = C3AE37B71F4C7D0B003AD9C4 /* graphMeteoUITests.xctest */;
+			productReference = C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSXUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -596,9 +608,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				C3AE379B1F4C7D0B003AD9C4 /* graphMeteo */,
-				C3AE37AB1F4C7D0B003AD9C4 /* graphMeteoTests */,
-				C3AE37B61F4C7D0B003AD9C4 /* graphMeteoUITests */,
+				C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX */,
+				C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
+				C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSXUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -759,7 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3AE37B11F4C7D0B003AD9C4 /* graphMeteoTests.swift in Sources */,
+				C3AE37B11F4C7D0B003AD9C4 /* DemoChartOSXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,21 +779,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3AE37BC1F4C7D0B003AD9C4 /* graphMeteoUITests.swift in Sources */,
+				C3AE37BC1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C362F94D1F514113004B21E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = C362F94C1F514113004B21E2 /* PBXContainerItemProxy */;
+		};
 		C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C3AE379B1F4C7D0B003AD9C4 /* graphMeteo */;
+			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX */;
 			targetProxy = C3AE37AD1F4C7D0B003AD9C4 /* PBXContainerItemProxy */;
 		};
 		C3AE37B91F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C3AE379B1F4C7D0B003AD9C4 /* graphMeteo */;
+			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX */;
 			targetProxy = C3AE37B81F4C7D0B003AD9C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -909,12 +926,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = graphMeteo/graphMeteo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DemoChartOSX/DemoChartOSX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoChartOSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteo;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -925,12 +942,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = graphMeteo/graphMeteo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DemoChartOSX/DemoChartOSX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DemoChartOSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteo;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -943,12 +960,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteoTests/Info.plist;
+				INFOPLIST_FILE = DemoChartOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/graphMeteo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/DemoChartOSX";
 			};
 			name = Debug;
 		};
@@ -959,12 +976,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteoTests/Info.plist;
+				INFOPLIST_FILE = DemoChartOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/graphMeteo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/DemoChartOSX";
 			};
 			name = Release;
 		};
@@ -974,12 +991,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteoUITests/Info.plist;
+				INFOPLIST_FILE = DemoChartOSXUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = graphMeteo;
+				TEST_TARGET_NAME = DemoChartOSX;
 			};
 			name = Debug;
 		};
@@ -989,12 +1006,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = graphMeteoUITests/Info.plist;
+				INFOPLIST_FILE = DemoChartOSXUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.graphMeteoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = graphMeteo;
+				TEST_TARGET_NAME = DemoChartOSX;
 			};
 			name = Release;
 		};
@@ -1010,7 +1027,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteo" */ = {
+		C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C11F4C7D0B003AD9C4 /* Debug */,
@@ -1019,7 +1036,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteoTests" */ = {
+		C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSXTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C41F4C7D0B003AD9C4 /* Debug */,
@@ -1028,7 +1045,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "graphMeteoUITests" */ = {
+		C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSXUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C71F4C7D0B003AD9C4 /* Debug */,

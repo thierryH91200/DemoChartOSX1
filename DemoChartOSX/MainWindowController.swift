@@ -1,6 +1,6 @@
 //
 //  MainWindowController.swift
-//  graphMeteo
+//  DemoChartOSX
 //
 //  Created by thierryH24100 on 22/08/2017.
 //  Copyright © 2017 thierryH24100. All rights reserved.
@@ -443,6 +443,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         self.albumArtViewController!.view.frame = albumArtView.bounds
         albumArtViewController?.mainWindowController = self
         albumArtViewController?.loadAlbumArtWindow()
+        
+        UserDefaults.standard.set(false, forKey: "showsArtwork")
+        self.albumArtView.isHidden = true
     }
     
     func addSubview(subView:NSView, toView parentView : NSView)
@@ -474,7 +477,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     //track queue, source logic
     @IBAction func toggleExpandQueue(_ sender: AnyObject) {
-        //trackQueueViewController!.toggleHidden(queueButton.state)
         switch queueButton.state {
         case NSOnState, NSMixedState:
             trackQueueView.isHidden = false
@@ -494,6 +496,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     }
 }
 
+// just for the debug
 extension NSView {
     
     override open var description: String {

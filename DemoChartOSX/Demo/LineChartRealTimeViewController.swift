@@ -1,6 +1,6 @@
 //
 //  LineChartRealTimeViewController.swift
-//  graphMeteo
+//  DemoChartOSX
 //
 //  Created by thierryH24100 on 25/08/2017.
 //  Copyright © 2017 thierryH24100. All rights reserved.
