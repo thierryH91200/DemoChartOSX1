@@ -15,6 +15,7 @@
                 <outlet property="collectionButton" destination="eg4-23-xqc" id="g9k-IR-ucI"/>
                 <outlet property="queueButton" destination="gzN-xP-Utz" id="a28-hf-6RT"/>
                 <outlet property="sourceListTargetView1" destination="NBm-y3-IWU" id="suz-O5-6iZ"/>
+                <outlet property="stackZoom" destination="Tlw-fS-NlB" id="Mga-f6-oeV"/>
                 <outlet property="trackQueueView" destination="267-Gg-sLE" id="YrD-su-qvP"/>
             </connections>
         </customObject>
@@ -202,6 +203,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="zoomIn:" target="-2" id="uDi-Ti-SeQ"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oKN-vq-hxe">
                                 <rect key="frame" x="35" y="-1" width="27" height="27"/>
@@ -213,6 +217,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="zoomAll:" target="-2" id="5NY-Kg-Tya"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAK-ax-ZKZ">
                                 <rect key="frame" x="70" y="-1" width="27" height="27"/>
@@ -224,6 +231,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="zoomOut:" target="-2" id="YEN-Os-EFd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

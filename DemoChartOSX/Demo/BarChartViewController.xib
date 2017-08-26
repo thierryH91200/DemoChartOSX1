@@ -3,15 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="BarChartViewController" customModule="graphMeteo" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="BarChartViewController" customModule="DemoChartOSX" customModuleProvider="target">
             <connections>
                 <outlet property="chartView" destination="PsS-VW-HIO" id="fUV-Fy-Ish"/>
-                <outlet property="home" destination="0p0-wW-ezP" id="ihO-Cv-2uF"/>
-                <outlet property="moins" destination="csS-bE-8Gm" id="vQw-qv-RJP"/>
-                <outlet property="plus" destination="dRB-dd-U7o" id="6rm-9O-Deb"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="IMb-dk-wiQ"/>
             </connections>
         </customObject>
@@ -27,84 +23,17 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="PsS-VW-HIO" customClass="BarChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="76" width="700" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="500"/>
                     </customView>
-                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-qw-dqV">
-                        <rect key="frame" x="603" y="36" width="97" height="19"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-dd-U7o">
-                                <rect key="frame" x="0.0" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="yR7-15-QXP"/>
-                                    <constraint firstAttribute="height" constant="19" id="zBY-lL-xrA"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YlD-4a-c3S">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomIn:" target="-2" id="gJg-Dd-AN1"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-wW-ezP">
-                                <rect key="frame" x="35" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="FsE-vd-Ry7"/>
-                                    <constraint firstAttribute="height" constant="19" id="lsP-z9-Qbt"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSHomeTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5qn-EL-QYm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomAll:" target="-2" id="fVZ-TY-jFd"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="csS-bE-8Gm">
-                                <rect key="frame" x="70" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="LEU-sl-Dlr"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LCy-3t-LyU">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomOut:" target="-2" id="nMe-hc-OF6"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="19" id="69b-iS-bVw"/>
-                            <constraint firstAttribute="width" constant="97" id="fap-bm-1o1"/>
-                        </constraints>
-                        <visibilityPriorities>
-                            <integer value="1000"/>
-                            <integer value="1000"/>
-                            <integer value="1000"/>
-                        </visibilityPriorities>
-                        <customSpacing>
-                            <real value="3.4028234663852886e+38"/>
-                            <real value="3.4028234663852886e+38"/>
-                            <real value="3.4028234663852886e+38"/>
-                        </customSpacing>
-                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PsS-VW-HIO" firstAttribute="bottom" secondItem="EiT-Mj-1SZ" secondAttribute="bottom" constant="-76" id="3tb-Bd-eJU"/>
-                    <constraint firstItem="tc3-qw-dqV" firstAttribute="trailing" secondItem="PsS-VW-HIO" secondAttribute="trailing" id="UCz-Ro-vTj"/>
-                    <constraint firstItem="PsS-VW-HIO" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="V3v-vo-YYI"/>
-                    <constraint firstAttribute="trailing" secondItem="tc3-qw-dqV" secondAttribute="trailing" id="Ypi-37-DaD"/>
-                    <constraint firstAttribute="bottom" secondItem="tc3-qw-dqV" secondAttribute="bottom" constant="36" id="dH8-g9-WoJ"/>
-                    <constraint firstItem="PsS-VW-HIO" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="hAk-Yg-mH8"/>
+                    <constraint firstAttribute="bottom" secondItem="PsS-VW-HIO" secondAttribute="bottom" id="6dZ-I6-lYc"/>
+                    <constraint firstAttribute="trailing" secondItem="PsS-VW-HIO" secondAttribute="trailing" id="Pfd-OM-cZ2"/>
+                    <constraint firstItem="PsS-VW-HIO" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Vsu-er-8G5"/>
+                    <constraint firstItem="PsS-VW-HIO" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="mTf-iW-azf"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="99.5" y="265"/>
         </window>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSHomeTemplate" width="14" height="14"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-    </resources>
 </document>

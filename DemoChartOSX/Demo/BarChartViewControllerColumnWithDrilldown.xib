@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BarChartViewControllerColumnWithDrilldown" customModule="graphMeteo">
@@ -27,66 +26,6 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="fJh-hW-yyt" customClass="BarChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="91" width="700" height="409"/>
                     </customView>
-                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NvE-BB-mPL">
-                        <rect key="frame" x="603" y="45" width="97" height="19"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qgp-5q-pKo">
-                                <rect key="frame" x="0.0" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="FoE-Mi-FuM"/>
-                                    <constraint firstAttribute="height" constant="19" id="iwp-nG-YUp"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vsd-SM-WA6">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomIn:" target="-2" id="8f0-j4-1qs"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NgY-tg-oXe">
-                                <rect key="frame" x="35" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="3Bk-Va-4Wh"/>
-                                    <constraint firstAttribute="height" constant="19" id="qyk-8y-0YH"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSHomeTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oqr-TO-Z7r">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomAll:" target="-2" id="gjH-HW-i62"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xLb-Jm-hne">
-                                <rect key="frame" x="70" y="-1" width="27" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="akA-Aa-uW9"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="etE-5J-eYH">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="zoomOut:" target="-2" id="BUn-ol-m14"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="97" id="3li-Fg-RfL"/>
-                            <constraint firstAttribute="height" constant="19" id="ZZ8-8j-MDA"/>
-                        </constraints>
-                        <visibilityPriorities>
-                            <integer value="1000"/>
-                            <integer value="1000"/>
-                            <integer value="1000"/>
-                        </visibilityPriorities>
-                        <customSpacing>
-                            <real value="3.4028234663852886e+38"/>
-                            <real value="3.4028234663852886e+38"/>
-                            <real value="3.4028234663852886e+38"/>
-                        </customSpacing>
-                    </stackView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r5b-bZ-Tyi">
                         <rect key="frame" x="364" y="37" width="132" height="32"/>
                         <buttonCell key="cell" type="push" title="Back to Brands" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qt5-1O-2Yq">
@@ -99,23 +38,15 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="NvE-BB-mPL" firstAttribute="trailing" secondItem="fJh-hW-yyt" secondAttribute="trailing" id="Bcc-5L-jk8"/>
-                    <constraint firstItem="fJh-hW-yyt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="Q0l-Nv-aOU"/>
-                    <constraint firstAttribute="bottom" secondItem="r5b-bZ-Tyi" secondAttribute="bottom" constant="44" id="dmU-0u-gmv"/>
-                    <constraint firstAttribute="trailing" secondItem="NvE-BB-mPL" secondAttribute="trailing" id="jsc-se-Nar"/>
-                    <constraint firstItem="fJh-hW-yyt" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="m1f-vM-JOo"/>
-                    <constraint firstAttribute="bottom" secondItem="NvE-BB-mPL" secondAttribute="bottom" constant="45" id="nrw-9q-xhS"/>
-                    <constraint firstItem="NvE-BB-mPL" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="27" id="the-SI-vGo"/>
-                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="370" id="xaM-Yt-aNW"/>
-                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="26" id="zvH-6F-ZSl"/>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="26" id="9hH-Ae-oen"/>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="370" id="Jz0-Kd-fjY"/>
+                    <constraint firstAttribute="bottom" secondItem="r5b-bZ-Tyi" secondAttribute="bottom" constant="44" id="NZj-Pv-XGw"/>
+                    <constraint firstItem="fJh-hW-yyt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="bkj-ps-xMZ"/>
+                    <constraint firstAttribute="trailing" secondItem="fJh-hW-yyt" secondAttribute="trailing" id="oGT-pX-MZL"/>
+                    <constraint firstItem="fJh-hW-yyt" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="oTt-tA-BVQ"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="213" y="244"/>
         </window>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSHomeTemplate" width="14" height="14"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-    </resources>
 </document>

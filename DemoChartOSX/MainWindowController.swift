@@ -72,6 +72,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     @IBOutlet weak var queueButton: NSButton!
     @IBOutlet weak var collectionButton: NSButton!
     
+    @IBOutlet weak var stackZoom: NSStackView!
+    
+    
     // all the sub controllers
     var barChartViewController                    = BarChartViewController()
     var barChartViewControllerColumnWithDrilldown = BarChartViewControllerColumnWithDrilldown()
@@ -119,6 +122,8 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     var pieChartView                    : PieChartView?
     var radarChartView                  : RadarChartView?
     var scatterChartView                : ScatterChartView?
+    
+    var barLineChartViewBase            : BarLineChartViewBase?
     
     var collection : NSControlStateValue = NSOffState
     
@@ -263,7 +268,6 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             lineChartView = lineChartRealTimeViewController.chartView
             typeOfChart = .line
             
-            
         default:
             vc = barChartViewController.view
             barChartView = barChartViewController.chartView
@@ -284,6 +288,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func setUpTrackQueue()
     {
+        stackZoom.isHidden = true
         switch typeOfChart
         {
         case .line:
@@ -293,6 +298,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             addSubview(subView: toggleViewController.view, toView: self.trackQueueView)
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
+            
+            stackZoom.isHidden = false
+            barLineChartViewBase = lineChartView
             
         case .pie:
             let toggleViewController = self.togglePieViewController
@@ -318,6 +326,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
+            stackZoom.isHidden = false
+            barLineChartViewBase = combinedChartView
+
         case .bar:
             let toggleViewController = self.toggleBarViewController
             
@@ -325,6 +336,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             addSubview(subView: toggleViewController.view, toView: self.trackQueueView)
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
+            
+            stackZoom.isHidden = false
+            barLineChartViewBase = barChartView
             
         case .bubble:
             let toggleViewController = self.toggleBubbleViewController
@@ -334,6 +348,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
+            stackZoom.isHidden = false
+            barLineChartViewBase = bubbleChartView
+            
         case .scatter:
             let toggleViewController = self.toggleScatterViewController
             
@@ -342,6 +359,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
             
+            stackZoom.isHidden = false
+            barLineChartViewBase = scatterChartView
+            
         case .candleStick:
             let toggleViewController = self.toggleCandleStickViewController
             
@@ -349,6 +369,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             addSubview(subView: toggleViewController.view, toView: self.trackQueueView)
             setUpLayoutConstraints(item: toggleViewController.view, toItem: trackQueueView)
             toggleViewController.view.frame = trackQueueView.bounds
+            
+            stackZoom.isHidden = false
+            barLineChartViewBase = candleStickChartView
             
         case .none:
             break
@@ -482,6 +505,29 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         collection = collectionButton.state
         setUpSourceList()
     }
+    
+    @IBAction func zoomAll(_ sender: AnyObject)
+    {
+        barLineChartViewBase?.fitScreen()
+        barLineChartViewBase?.data?.notifyDataChanged()
+        barLineChartViewBase?.notifyDataSetChanged()
+    }
+    
+    @IBAction func zoomIn(_ sender: AnyObject)
+    {
+        barLineChartViewBase?.zoomToCenter(scaleX: 1.5, scaleY: 1.5) //, x: view.frame.width, y: 0)
+        barLineChartViewBase?.data?.notifyDataChanged()
+        barLineChartViewBase?.notifyDataSetChanged()
+    }
+    
+    @IBAction func zoomOut(_ sender: AnyObject)
+    {
+        barLineChartViewBase?.zoomToCenter(scaleX: 2/3, scaleY: 2/3)
+        barLineChartViewBase?.data?.notifyDataChanged()
+        barLineChartViewBase?.notifyDataSetChanged()
+    }
+    
+
 }
 
 // just for the debug

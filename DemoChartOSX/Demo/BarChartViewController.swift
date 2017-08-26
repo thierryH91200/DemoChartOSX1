@@ -19,10 +19,6 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
 {
     @IBOutlet var chartView: BarChartView!
     
-    @IBOutlet weak var moins: NSButton!
-    @IBOutlet weak var home: NSButton!
-    @IBOutlet weak var plus: NSButton!
-    
     var values = [Double]()
     var mytitle = ""
     var mysection = ""
@@ -150,21 +146,6 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
-    }
-    
-    // Zoom Buttons
-    @IBAction func zoomAll(_ sender: NSButton) {
-        
-        chartView.fitScreen()
-    }
-    @IBAction func zoomIn(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 1.5, scaleY: 1)
-    }
-    
-    @IBAction func zoomOut(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 2/3, scaleY: 1)
     }
     
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {

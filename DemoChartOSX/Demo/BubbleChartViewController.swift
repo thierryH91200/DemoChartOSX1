@@ -115,21 +115,6 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         chartView.data = data
     }
     
-    // Zoom Buttons
-    @IBAction func zoomAll(_ sender: AnyObject)
-    {
-        chartView.fitScreen()
-    }
-    
-    @IBAction func zoomIn(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 1.5, scaleY: 1)
-    }
-    
-    @IBAction func zoomOut(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 2/3, scaleY: 1)
-    }
     
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print("Bubble selected")
