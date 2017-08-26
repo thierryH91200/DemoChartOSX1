@@ -223,25 +223,6 @@ open class LineChartTimeViewController: DemoBaseViewController
         updateChartData()
     }
     
-    // Zoom Buttons
-    @IBAction func zoomAll(_ sender: AnyObject) {
-        chartView.fitScreen()
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
-    @IBAction func zoomIn(_ sender: AnyObject) {
-        chartView.zoomToCenter(scaleX: 1.5, scaleY: 1) //, x: view.frame.width, y: 0)
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
-    @IBAction func zoomOut(_ sender: AnyObject) {
-        chartView.zoomToCenter(scaleX: 2/3, scaleY: 1) //, x: view.frame.width, y: 0)
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
     @IBAction func toggleDrag(_ sender: Any)
     {
         chartView.dragEnabled = !chartView.dragEnabled

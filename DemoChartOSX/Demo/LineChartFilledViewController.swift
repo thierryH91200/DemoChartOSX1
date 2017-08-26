@@ -156,20 +156,6 @@ open class LineChartFilledViewController: DemoBaseViewController
             chartView.data = data
         }
     }
-    
-    // Zoom Buttons
-    @IBAction func zoomAll(_ sender: AnyObject) {
-        chartView.fitScreen()
-    }
-    
-    @IBAction func zoomIn(_ sender: AnyObject) {
-        chartView.zoomToCenter(scaleX: 1.5, scaleY: 1) //, x: view.frame.width, y: 0)
-        
-    }
-    
-    @IBAction func zoomOut(_ sender: AnyObject) {
-        chartView.zoomToCenter(scaleX: 2/3, scaleY: 1) //, x: view.frame.width, y: 0)
-    }
 }
 
 

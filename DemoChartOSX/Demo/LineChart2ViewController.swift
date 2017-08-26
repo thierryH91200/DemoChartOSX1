@@ -282,27 +282,6 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         sliderTextY.stringValue =  String(Int( sliderY.intValue))
         updateChartData()
     }
-    
-    @IBAction func zoomAll(_ sender: AnyObject)
-    {
-        chartView.fitScreen()
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
-    @IBAction func zoomIn(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 1.5, scaleY: 1.5) //, x: view.frame.width, y: 0)
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
-    @IBAction func zoomOut(_ sender: AnyObject)
-    {
-        chartView.zoomToCenter(scaleX: 2/3, scaleY: 2/3)
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
 
     @IBAction func toggleDrag(_ sender: Any) {
     }
