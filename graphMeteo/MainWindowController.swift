@@ -72,6 +72,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     @IBOutlet weak var queueButton: NSButton!
     @IBOutlet weak var collectionButton: NSButton!
     
+    // all the sub controllers
     var barChartViewController                    = BarChartViewController()
     var barChartViewControllerColumnWithDrilldown = BarChartViewControllerColumnWithDrilldown()
     var bubbleChartViewController                 = BubbleChartViewController()
@@ -109,6 +110,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     let toggleRadarViewController       = ToggleRadarViewController()
     let toggleScatterViewController     = ToggleScatterViewController()
     
+    // all the type of chart
     var barChartView                    : BarChartView?
     var bubbleChartView                 : BubbleChartView?
     var candleStickChartView            : CandleStickChartView?

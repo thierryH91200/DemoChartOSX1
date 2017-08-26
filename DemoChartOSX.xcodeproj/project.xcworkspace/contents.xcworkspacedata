@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:graphMeteo.xcodeproj">
+      location = "self:/Users/thierryh24100/Documents/Developpement/graphMeteo/DemoChartOSX.xcodeproj">
    </FileRef>
 </Workspace>

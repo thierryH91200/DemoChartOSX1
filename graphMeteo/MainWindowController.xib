@@ -139,7 +139,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aLT-7j-MYS" userLabel="Sharing Button">
+                    <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aLT-7j-MYS" userLabel="Sharing Button">
                         <rect key="frame" x="124" y="4" width="44" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="Iw5-0h-g0a"/>
