@@ -29,33 +29,6 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
     {
         super.viewDidLoad()
         
-//        let options = [["label": "Toggle Values"],
-//                       ["label": "Toggle Highlight"],
-//                       ["label": "Animate X"],
-//                       ["label": "Animate Y"],
-//                       ["label": "Animate XY"],
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Toggle PinchZoom"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
-//        
-//        mainMenu.removeAllItems()
-//        for option in options
-//        {
-//            if option["label"]  == "separator"
-//            {
-//                mainMenu.addItem(NSMenuItem.separator())
-//            }
-//            else
-//            {
-//                mainMenu.addItem(withTitle: option["label"]!, action: #selector(optionTapped(sender:)), keyEquivalent: "")
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-        
         // MARK: General
         chartView.extraTopOffset = -30.0
         chartView.extraBottomOffset = 10.0
@@ -155,16 +128,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         data.barWidth = 0.8
         chartView.data = data
     }
-    
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
-    
+        
     @IBAction func zoomAll(_ sender: AnyObject)
     {
         chartView.fitScreen()

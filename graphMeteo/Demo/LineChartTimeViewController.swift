@@ -16,9 +16,7 @@ import Charts
 open class LineChartTimeViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: LineChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderTextX: NSTextField!
     

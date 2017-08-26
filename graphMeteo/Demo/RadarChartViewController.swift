@@ -36,38 +36,6 @@ open class RadarChartViewController: DemoBaseViewController
     {
         super.viewDidLoad()
         
-//        let options = [["label": "Toggle Values"],
-//                       ["label": "Toggle Toggle highlight circle"],
-//                       ["label": "Toggle Toggle X-Values"],
-//                       ["label": "Toggle Toggle Y-Values"],
-//                       ["label": "Toggle Rotate"],
-//                       ["label": "Toggle Fill"],
-//                       ["label": "Toggle Highlight"],
-//                       ["label": "Animate X"],
-//                       ["label": "Animate Y"],
-//                       ["label": "Animate XY"],
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Spin"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
-//        
-//        mainMenu.removeAllItems()
-//        for option in options
-//        {
-//            if option["label"]  == "separator"
-//            {
-//                mainMenu.addItem(NSMenuItem.separator())
-//            }
-//            else
-//            {
-//                mainMenu.addItem(withTitle: option["label"]!, action: #selector(RadarChartViewController.optionTapped(sender:)), keyEquivalent: "")
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-        
         // MARK: General
         chartView.backgroundColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
         chartView.webLineWidth = 1.0
@@ -157,49 +125,11 @@ open class RadarChartViewController: DemoBaseViewController
         chartView.data = data
     }
     
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        case "Toggle Filled":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! RadarChartDataSet
-//                set.drawFilledEnabled = !set.isDrawFilledEnabled
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle highlight circle":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! RadarChartDataSet
-//                set.drawHighlightCircleEnabled = !set.drawHighlightCircleEnabled
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Spin":
-//            for  _ in 0..<chartView.data!.dataSets.count
-//            {
-//                chartView.spin (duration : 2.0, fromAngle: chartView.rotationAngle, toAngle: chartView.rotationAngle + 360.0, easingOption: .easeInCubic)
-//                //chartView.spin(duration: <#T##TimeInterval#>, fromAngle: <#T##CGFloat#>, toAngle: <#T##CGFloat#>)
-//            }
-//            chartView.needsDisplay = true
-//            
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
-    
-    
     // MARK: - IAxisValueFormatter
     func string(forValue value: Double, axis: AxisBase) -> String {
         return activities[Int(value) % activities.count]
     }
-    
-    
 }
-
-
 
 class RadarChartXValueFormatter: NSObject, IAxisValueFormatter {
     

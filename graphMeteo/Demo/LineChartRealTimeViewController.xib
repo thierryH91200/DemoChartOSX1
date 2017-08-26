@@ -53,21 +53,7 @@
                             <action selector="pauseButton:" target="-2" id="gAq-tB-Cvc"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bmn-cV-wX5">
-                        <rect key="frame" x="270" y="19" width="28" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="28" id="c6k-sL-WBN"/>
-                            <constraint firstAttribute="height" constant="28" id="j4y-uD-yop"/>
-                        </constraints>
-                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSFastForwardTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Xj-wK-UY0">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="playFastButton:" target="-2" id="cIg-50-fYx"/>
-                        </connections>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-hy-6zB">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-hy-6zB">
                         <rect key="frame" x="496" y="31" width="37" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="HcA-Kw-Ais">
                             <font key="font" metaFont="system"/>
@@ -85,9 +71,6 @@
                     <constraint firstAttribute="bottom" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="68" id="FHs-DT-BfA"/>
                     <constraint firstItem="SGf-Jr-yFv" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="Tvy-da-QYd"/>
                     <constraint firstAttribute="trailing" secondItem="ewu-Ar-XhF" secondAttribute="trailing" id="UXa-C8-GcN"/>
-                    <constraint firstItem="bmn-cV-wX5" firstAttribute="leading" secondItem="SGf-Jr-yFv" secondAttribute="trailing" constant="5" id="hsm-2W-kAm"/>
-                    <constraint firstItem="XCy-hy-6zB" firstAttribute="leading" secondItem="bmn-cV-wX5" secondAttribute="trailing" constant="200" id="oUD-iE-h3v"/>
-                    <constraint firstItem="bmn-cV-wX5" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="q6N-4k-hcq"/>
                     <constraint firstItem="bc6-pM-0Cp" firstAttribute="leading" secondItem="Arn-JX-UQJ" secondAttribute="leading" constant="200" id="tsk-tb-G0w"/>
                     <constraint firstItem="SGf-Jr-yFv" firstAttribute="leading" secondItem="bc6-pM-0Cp" secondAttribute="trailing" constant="5" id="wHJ-vt-WGv"/>
                 </constraints>
@@ -96,8 +79,7 @@
         </window>
     </objects>
     <resources>
-        <image name="NSFastForwardTemplate" width="128" height="128"/>
-        <image name="NSPauseTemplate" width="128" height="128"/>
-        <image name="NSPlayTemplate" width="128" height="128"/>
+        <image name="NSPauseTemplate" width="8" height="9"/>
+        <image name="NSPlayTemplate" width="25" height="23"/>
     </resources>
 </document>

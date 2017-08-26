@@ -34,38 +34,6 @@ open class HalfPieChartViewController: DemoBaseViewController
     {
         super.viewDidLoad()
         
-//        let options = [["label": "Toggle Values"],
-//                       ["label": "Toggle Filled"],
-//                       ["label": "Toggle Circles"],
-//                       ["label": "Toggle Cubic"],
-//                       ["label": "Toggle Horizontal Cubic"],
-//                       ["label": "Toggle Stepped"],
-//                       ["label": "Toggle Highlight"],
-//                       ["label": "Animate X"],
-//                       ["label": "Animate Y"],
-//                       ["label": "Animate XY"],
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Toggle PinchZoom"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
-        
-//        mainMenu.removeAllItems()
-//        for option in options
-//        {
-//            if option["label"]  == "separator"
-//            {
-//                mainMenu.addItem(NSMenuItem.separator())
-//            }
-//            else
-//            {
-//                mainMenu.addItem(withTitle: option["label"]!, action: #selector(HalfPieChartViewController.optionTapped(sender:)), keyEquivalent: "")
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-        
         super.setupPieChartView(chartView)
         
         // MARK: General
@@ -140,55 +108,6 @@ open class HalfPieChartViewController: DemoBaseViewController
         chartView.data = data
         chartView.needsDisplay = true
     }
-    
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        case "Toggle Filled":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineRadarChartDataSet
-//                set.drawFilledEnabled = !set.isDrawFilledEnabled
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Circles":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.drawCirclesEnabled = !set.isDrawCirclesEnabled
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Cubic":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .cubicBezier ? .linear : .cubicBezier
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Stepped":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .stepped ? .linear : .stepped
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Horizontal Cubic":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .horizontalBezier ? .linear : .horizontalBezier
-//            }
-//            chartView.needsDisplay = true
-//            
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
 }
 
 // MARK: - ChartViewDelegate

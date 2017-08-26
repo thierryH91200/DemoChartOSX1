@@ -40,36 +40,6 @@ open class PiePolylineChartViewController: DemoBaseViewController
     {
         super.viewDidLoad()
         
-//        let options = [["label": "Toggle Values"],
-//                       ["label": "Toggle xValues"],
-//                       ["label": "Toggle Percent"],
-//                       ["label": "Toggle Hole"],
-//                       ["label": "separator"],
-//                       ["label": "Animate X"],
-//                       ["label": "Animate Y"],
-//                       ["label": "Animate XY"],
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Toggle PinchZoom"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
-//
-//        mainMenu.removeAllItems()
-//        for option in options
-//        {
-//            if option["label"]  == "separator"
-//            {
-//                mainMenu.addItem(NSMenuItem.separator())
-//            }
-//            else
-//            {
-//                mainMenu.addItem(withTitle: option["label"]!, action: #selector(PiePolylineChartViewController.optionTapped(sender:)), keyEquivalent: "")
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-        
         setupPieChartView( chartView)
         
         let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default().mutableCopy() as! NSMutableParagraphStyle
@@ -140,49 +110,7 @@ open class PiePolylineChartViewController: DemoBaseViewController
         chartView.data = data
         chartView.highlightValues(nil)
     }
-    
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        case "Toggle Percent":
-//            
-//            chartView.usePercentValuesEnabled = !chartView.isUsePercentValuesEnabled
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Hole":
-//            chartView.drawHoleEnabled = !chartView.isDrawHoleEnabled
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Cubic":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .cubicBezier ? .linear : .cubicBezier
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Stepped":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .stepped ? .linear : .stepped
-//            }
-//            chartView.needsDisplay = true
-//            
-//        case "Toggle Horizontal Cubic":
-//            for  i in 0..<chartView.data!.dataSets.count
-//            {
-//                let set = chartView.data!.dataSets[i] as! LineChartDataSet
-//                set.mode = set.mode == .horizontalBezier ? .linear : .horizontalBezier
-//            }
-//            chartView.needsDisplay = true
-//            
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
-    
+        
     @IBAction func slidersValueChanged(_ sender: AnyObject)
     {
         sliderTextX.stringValue = String(Int( sliderX.intValue))

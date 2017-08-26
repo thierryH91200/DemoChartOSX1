@@ -31,33 +31,6 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
     {
         super.viewDidLoad()
         
-//        let options = [["label": "Toggle Values"],
-//                       ["label": "Toggle Highlight"],
-//                       ["label": "Animate X"],
-//                       ["label": "Animate Y"],
-//                       ["label": "Animate XY"],
-//                       ["label": "Save to Camera Roll"],
-//                       ["label": "Toggle PinchZoom"],
-//                       ["label": "Toggle auto scale min/max"],
-//                       ["label": "Toggle Data"]]
-//
-//        mainMenu.removeAllItems()
-//        for option in options
-//        {
-//            if option["label"]  == "separator"
-//            {
-//                mainMenu.addItem(NSMenuItem.separator())
-//            }
-//            else
-//            {
-//                mainMenu.addItem(withTitle: option["label"]!, action: #selector(NegativeStackedBarChartViewController.optionTapped(sender:)), keyEquivalent: "")
-//            }
-//        }
-//        for item in mainMenu.items
-//        {
-//            item.target = self
-//        }
-        
         // MARK: General
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = true
@@ -174,16 +147,7 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
             chartView.needsDisplay =  true
         }
     }
-    
-//    internal func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
-    
+        
     // Zoom Buttons
     @IBAction func zoomAll(_ sender: AnyObject) {
         chartView.fitScreen()

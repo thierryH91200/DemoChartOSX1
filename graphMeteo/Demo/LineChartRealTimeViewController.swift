@@ -16,23 +16,11 @@ class LineChartRealTimeViewController: NSViewController {
     
     @IBOutlet weak var time: NSTextField!
     
-    var yEntries : [ChartDataEntry] = [ChartDataEntry]()
-    var currentCount = 0.0
+    var yEntries = [ChartDataEntry]()
+    var currentCount = 0
     
     var timer  : Timer?
-    var step = 0.0
-    
-    override public func viewDidAppear() {
-        super.viewDidAppear()
-        view.window!.title = "Real Time Line"
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        configureLiveChart()
-    }
+    var step = 0
     
     override func viewWillDisappear()
     {
@@ -43,48 +31,20 @@ class LineChartRealTimeViewController: NSViewController {
         }
     }
     
-    func addValuesToChart()
-    {
-        let yValue = Double(arc4random_uniform(UInt32(10))) + 2
-        
-        let chartEntry = ChartDataEntry(x: Double(currentCount), y: yValue)
-        yEntries.append(chartEntry)
-        if yEntries.count > Int(50.0 / step)
-        {
-            yEntries.removeFirst()
-            
-        }
-        let modulo = Int(currentCount * 10) % 100
-        print(currentCount, "    ", modulo)
-        if yEntries.count == Int(50.0 / step)
-        {
-            chartView.xAxis.axisMaximum = currentCount
-            chartView.xAxis.axisMinimum = currentCount - 50
-            
-        }
-        
-        chartView.moveViewToX(Double(currentCount))
-        time.doubleValue = currentCount
-        currentCount += step
-        setData()
+    override public func viewDidAppear() {
+        super.viewDidAppear()
+        view.window!.title = "Real Time Line"
     }
     
-    func setData()
+    override func viewDidLoad()
     {
-        var set1 = LineChartDataSet()
-        set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
-        
-        set1.values = yEntries
-        chartView.data?.notifyDataChanged()
-        chartView.notifyDataSetChanged()
-    }
-    
-    
-    func  configureLiveChart()
-    {
+        super.viewDidLoad()
+
         chartView.drawBordersEnabled = true
         chartView.drawGridBackgroundEnabled = true
         chartView.gridBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        chartView.chartDescription?.enabled = false
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
@@ -104,8 +64,9 @@ class LineChartRealTimeViewController: NSViewController {
         chartView.marker = marker
         
         currentCount = 10
-        let count = 10
-        yEntries = (0..<count).map { (i) -> ChartDataEntry in
+        time.intValue = Int32(currentCount)
+
+        yEntries = (0..<currentCount).map { (i) -> ChartDataEntry in
             let val = Double(arc4random_uniform(UInt32(10))) + 2
             return ChartDataEntry(x: Double(i), y: val)
         }
@@ -129,6 +90,35 @@ class LineChartRealTimeViewController: NSViewController {
         data.setValueFont(NSUIFont(name: "HelveticaNeue-Light", size: CGFloat(9.0)))
         chartView.data = data
     }
+
+    func addValuesToChart()
+    {
+        let yValue = Double(arc4random_uniform(UInt32(10))) + 2
+        
+        let chartEntry = ChartDataEntry(x: Double(currentCount), y: yValue)
+        yEntries.append(chartEntry)
+        if yEntries.count == Int(50 / step)
+        {
+            chartView.xAxis.resetCustomAxisMax()
+            chartView.xAxis.resetCustomAxisMin()
+        }
+
+        if yEntries.count >= Int(50 / step)
+        {
+            yEntries.removeFirst()
+        }
+
+        chartView.moveViewToX(Double(currentCount))
+        time.intValue = Int32(currentCount)
+        currentCount += step
+ 
+        var set1 = LineChartDataSet()
+        set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
+        
+        set1.values = yEntries
+        chartView.data?.notifyDataChanged()
+        chartView.notifyDataSetChanged()
+    }
     
     @IBAction func pauseButton(_ sender: Any) {
         
@@ -143,17 +133,7 @@ class LineChartRealTimeViewController: NSViewController {
             timer!.invalidate()
             timer = nil
         }
-            step = 1
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.addValuesToChart), userInfo: nil, repeats: true)
-}
-    
-    @IBAction func playFastButton(_ sender: Any) {
-        if timer != nil {
-            timer!.invalidate()
-            timer = nil
-        }
-        step = 0.5
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.addValuesToChart), userInfo: nil, repeats: true)
+        step = 1
+        timer = Timer.scheduledTimer(timeInterval: Double(step), target: self, selector: #selector(self.addValuesToChart), userInfo: nil, repeats: true)
     }
-    
 }

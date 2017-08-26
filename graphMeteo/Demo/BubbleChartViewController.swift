@@ -88,7 +88,6 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
     {
         // MARK: BubbleChartDataEntry
         let datas = [[10.0,6.0,60.0],[30.0,8.0,240.0],[90.0,5.0,450.0],[50.0,2.0,100.0]]
-        
         let label = ["Foo", "Baz","Bar", "Spong"]
         
         var entries = [BubbleChartDataEntry]()
@@ -99,8 +98,8 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
             entries.removeAll()
             let x = datas[index][0]
             let y = datas[index][1]
-//            let size = datas[index][2]
-            entries.append(BubbleChartDataEntry(x: x, y: y, size: CGFloat(15  )))
+            let size = datas[index][2] / 10
+            entries.append(BubbleChartDataEntry(x: x, y: y, size: CGFloat(size)))
             
             // MARK: BubbleChartDataSet
             let set = BubbleChartDataSet(values: entries, label: label[index])

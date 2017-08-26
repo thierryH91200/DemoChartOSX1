@@ -228,15 +228,6 @@ open class MultipleBarChartViewController: DemoBaseViewController
         }
     }
     
-//    func optionTapped( sender: NSMenuItem)
-//    {
-//        switch (sender.title)
-//        {
-//        default:
-//            super.toggle(sender.title, chartView: chartView)
-//        }
-//    }
-    
     // MARK: - Actions
     @IBAction func slidersValueChanged(_ sender: Any)
     {
