@@ -19,8 +19,6 @@ open class SinusBarChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: BarChartView!
     
-//    @IBOutlet var mainMenu: NSMenu!
-    
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderTextX: NSTextField!
     
@@ -35,7 +33,6 @@ open class SinusBarChartViewController: DemoBaseViewController
         chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
     }
 
-    
     override open func viewDidLoad()
     {
         super.viewDidLoad()

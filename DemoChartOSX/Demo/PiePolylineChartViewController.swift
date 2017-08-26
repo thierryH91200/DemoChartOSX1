@@ -16,9 +16,7 @@ import Charts
 open class PiePolylineChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: PieChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderY: NSSlider!
     

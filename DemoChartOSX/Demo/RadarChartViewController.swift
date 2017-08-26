@@ -16,9 +16,7 @@ import Charts
 open class RadarChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: RadarChartView!
-    
-    @IBOutlet var mainMenu: NSMenu!
-    
+        
     let activities = ["Burger", "Steak", "Salad", "Pasta", "Pizza"]
     
     override open func viewDidAppear()

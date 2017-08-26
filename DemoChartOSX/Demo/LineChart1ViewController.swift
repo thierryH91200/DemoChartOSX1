@@ -18,9 +18,7 @@ private var defaultsContext = 0
 open class LineChart1ViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: LineChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderY: NSSlider!
     

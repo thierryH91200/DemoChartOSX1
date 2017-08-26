@@ -164,11 +164,8 @@ extension SourceListViewController: NSOutlineViewDelegate
         
         if let feedItem = outlineView.item(atRow: selectedIndex) as? FeedItem
         {
-            //3
             let name =  feedItem.name
-            let id =  feedItem.id
-            //4
-            mainWindowController?.changeView(name: name, id: id)
+            mainWindowController?.changeView(name: name)
         }
     }
 }

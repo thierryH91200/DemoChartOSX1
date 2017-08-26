@@ -17,9 +17,7 @@ open class LineChartFilledViewController: DemoBaseViewController
 {
     
     @IBOutlet var chartView: LineChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     let interval = 3600.0 * 24.0
     
     override open func viewDidAppear()

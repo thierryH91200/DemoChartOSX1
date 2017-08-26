@@ -168,7 +168,7 @@ extension SourceCollectionController : NSCollectionViewDelegate
         print(indexPaths)
         print(array[0])
         print("")
-        mainWindowController?.changeView(name: nameController!, id: nameController!)
+        mainWindowController?.changeView(name: nameController!)
     }
     
     func highlightItems( selected: Bool, atIndexPaths: Set<IndexPath>) {

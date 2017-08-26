@@ -142,7 +142,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         setUpAlbumArt()
     }
     
-    func changeView(name: String, id : String)
+    func changeView(name: String)
     {
         var  vc = NSView()
         
@@ -266,6 +266,8 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
             
         default:
             vc = barChartViewController.view
+            barChartView = barChartViewController.chartView
+            typeOfChart = .bar
         }
         
         addSubview(subView: vc, toView: chartTargetView)
@@ -391,23 +393,9 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
         imageInfo.append(ImageInfo(thumbnail: lineChartRealTimeViewController.view.image(), nameController: "LineChartRealTimeViewController", name: "Line Real Time Chart", type: .line))
         
+        // not very good the sort
         imageInfo = imageInfo.sorted (by: { $0.name < $1.name })
         imageInfo = imageInfo.sorted (by: { $0.type.label < $1.type.label })
-        
-        
-//        imageInfo = imageInfo.sorted (by: { (c1, c2) -> Bool in
-//            if c1.name < c2.name
-//            {
-//                return true
-//            } else
-//                if c1.name > c2.name
-//                {
-//                    return false
-//                } else if c1.type.label < c2.type.label {
-//                    return true
-//            }
-//            return false
-//        })
     }
     
     func setUpSourceList()

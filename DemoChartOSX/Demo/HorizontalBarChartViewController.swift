@@ -16,9 +16,7 @@ import Charts
 open class HorizontalBarChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: HorizontalBarChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderY: NSSlider!
     

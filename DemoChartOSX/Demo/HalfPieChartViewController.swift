@@ -16,9 +16,7 @@ import Charts
 open class HalfPieChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: PieChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     override open func viewDidAppear()
     {
         super.viewDidAppear()

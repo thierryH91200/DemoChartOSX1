@@ -21,6 +21,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
     @IBOutlet weak var sliderTextX: NSTextField!
     @IBOutlet weak var sliderTextY: NSTextField!
     
+//    var barLineChartViewBase : BarLineChartViewBase = BarLineChartViewBase()
+    
     override public func viewDidAppear() {
         super.viewDidAppear()
         view.window!.title = "Line Chart 2 (Dual YAxis)"
@@ -34,6 +36,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
     override open func viewDidLoad()
     {
         super.viewDidLoad()
+        
+ //       barLineChartViewBase = chartView
         
         // MARK: General
         chartView.delegate = self

@@ -16,9 +16,7 @@ import Charts
 open class CubicLineChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: LineChartView!
-    
-//    @IBOutlet var mainMenu: NSMenu!
-    
+        
     @IBOutlet weak var sliderX: NSSlider!
     @IBOutlet weak var sliderY: NSSlider!
     

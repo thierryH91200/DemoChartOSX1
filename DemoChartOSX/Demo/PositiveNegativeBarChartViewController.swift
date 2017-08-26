@@ -16,9 +16,7 @@ import Charts
 open class PositiveNegativeBarChartViewController: DemoBaseViewController
 {
     @IBOutlet var chartView: BarChartView!
-    
- //   @IBOutlet var mainMenu: NSMenu!
-    
+        
     override open func viewDidAppear()
     {
         super.viewDidAppear()
