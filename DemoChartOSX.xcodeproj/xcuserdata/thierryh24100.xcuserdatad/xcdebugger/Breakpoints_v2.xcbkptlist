@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DemoChartOSX/MainWindowController.swift"
-            timestampString = "525496251.61871"
+            timestampString = "525499025.566159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "428"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DemoChartOSX/Collection/SourceCollectionController.swift"
-            timestampString = "525496251.618792"
+            timestampString = "525499025.566213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "setupDataForMultiSectionMode()"
             landmarkType = "7">
          </BreakpointContent>

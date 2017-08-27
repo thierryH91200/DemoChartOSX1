@@ -31,7 +31,6 @@ class CollectionViewItem: NSCollectionViewItem {
     override var isSelected: Bool {
         didSet {
             view.layer?.borderWidth = isSelected ? 5.0 : 0.0
-            //print(textField?.stringValue)
         }
     }
     

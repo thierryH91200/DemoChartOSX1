@@ -1,10 +1,13 @@
 //
-//  SourceCollectionController.swift
-//  subView2
+//  SourceCollectionController
+//  DemoChartOSX
 //
-//  Created by thierryH24A on 16/08/2017.
-//  Copyright © 2017 thierryH24A. All rights reserved.
+//  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
+//  Copyright © 2017 thierry Hentic.
+//  A port of MPAndroidChart for iOS
+//  Licensed under Apache License 2.0
 //
+//  https://github.com/danielgindi/ios-charts
 
 
 

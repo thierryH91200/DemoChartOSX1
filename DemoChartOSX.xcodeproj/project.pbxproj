@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30610301F4E75EC00D95D30 /* CollectionView.swift */; };
 		C328964A1F5181B2000A7E51 /* CustomChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32896481F5181B2000A7E51 /* CustomChart.swift */; };
 		C328964B1F5181B2000A7E51 /* CustomChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32896491F5181B2000A7E51 /* CustomChart.xib */; };
 		C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */; };
@@ -165,7 +164,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C30610301F4E75EC00D95D30 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		C32896481F5181B2000A7E51 /* CustomChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChart.swift; sourceTree = "<group>"; };
 		C32896491F5181B2000A7E51 /* CustomChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomChart.xib; sourceTree = "<group>"; };
 		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
@@ -494,7 +492,6 @@
 		C3FC562A1F4CA2F40090991B /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				C30610301F4E75EC00D95D30 /* CollectionView.swift */,
 				C3FC56231F4CA2ED0090991B /* CollectionViewItem.swift */,
 				C3FC56271F4CA2EE0090991B /* CollectionViewItem.xib */,
 				C3FC56251F4CA2ED0090991B /* HeaderView.swift */,
@@ -735,7 +732,6 @@
 				C3FC55EA1F4C8C0D0090991B /* ColoredLineChartViewController.swift in Sources */,
 				C3FC55EF1F4C8C0D0090991B /* range.swift in Sources */,
 				C3FC55F71F4C8C0D0090991B /* StackedBarChartViewController.swift in Sources */,
-				C30610311F4E75EC00D95D30 /* CollectionView.swift in Sources */,
 				C3FC55AF1F4C8B800090991B /* RadarMarkerView.swift in Sources */,
 				C3FB45541F4F2C6F002A291C /* SourceCollectionController.swift in Sources */,
 				C3FC55AE1F4C8B800090991B /* DateValueFormatter.swift in Sources */,
