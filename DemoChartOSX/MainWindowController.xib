@@ -127,7 +127,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="hy6-BX-4Jm"/>
                         </constraints>
-                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Queue" imagePosition="only" alignment="center" alternateImage="Queue Alternate" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="gJN-HC-1x0">
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Queue" imagePosition="only" alignment="center" alternateImage="Queue Alternate" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="gJN-HC-1x0">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

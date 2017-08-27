@@ -288,6 +288,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func setUpTrackQueue()
     {
+        queueButton.state = NSOnState
         stackZoom.isHidden = true
         switch typeOfChart
         {
@@ -494,15 +495,14 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
     
     //track queue, source logic
     @IBAction func toggleExpandQueue(_ sender: AnyObject) {
-        switch queueButton.state {
-        case NSOnState, NSMixedState:
-            trackQueueView.isHidden = false
+        if self.trackQueueView.isHidden == false {
+            queueButton.state = NSOffState
             UserDefaults.standard.set(false, forKey: "queueHidden")
-        case NSOffState:
-            trackQueueView.isHidden = true
+            self.trackQueueView.isHidden = true
+        } else {
+            queueButton.state = NSOnState
             UserDefaults.standard.set(true, forKey: "queueHidden")
-        default:
-            break
+            self.trackQueueView.isHidden = false
         }
     }
     
