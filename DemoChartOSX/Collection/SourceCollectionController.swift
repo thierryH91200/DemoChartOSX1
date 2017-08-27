@@ -27,10 +27,7 @@ class SourceCollectionController: NSViewController {
     }
     
     // sectionLengthArray - An array of picked integers.
-    // sectionLengthArray[0] is 8, i.e. put the first 7 images from the imageFiles array into section 0
-    // sectionLengthArray[1] is 1, i.e. put the next 5 images from the imageFiles array into section 1
-    // and so on...
-    fileprivate var sectionLengthArray = [8, 1, 1, 1, 6, 3, 1, 1, 1, 25, 10, 3, 30, 25, 40]
+    fileprivate var sectionLengthArray = [Int]()
     fileprivate var sectionsAttributesArray = [SectionAttributes]()
     
     override func viewDidLoad() {
@@ -60,7 +57,6 @@ class SourceCollectionController: NSViewController {
         collectionView.collectionViewLayout = flowLayout
         view.wantsLayer = true
         collectionView.layer?.backgroundColor = NSColor.black.cgColor
-        print("flowLayout ", flowLayout)
     }
     
     func setupData()
@@ -85,13 +81,6 @@ class SourceCollectionController: NSViewController {
     
     fileprivate func setupDataForMultiSectionMode() {
         
-        let haveOneSection = singleSectionMode || sectionLengthArray.count < 2 || imageInfos.count <= sectionLengthArray[0]
-        var realSectionLength = haveOneSection ? imageInfos.count : sectionLengthArray[0]
-        var sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: realSectionLength, sectionName: imageInfos[0].type.label)
-        sectionsAttributesArray.append(sectionAttributes) // sets up attributes for first section
-        
-        guard !haveOneSection else {return}
-
         let arrayFromDic = Array(imageInfos.map{ $0.type.label })
         
         var counts: [String: Int] = [:]
@@ -105,6 +94,15 @@ class SourceCollectionController: NSViewController {
         {
             sectionLengthArray.append(countSorted.value)
         }
+
+        
+        let haveOneSection = singleSectionMode || sectionLengthArray.count < 2 || imageInfos.count <= sectionLengthArray[0]
+        var realSectionLength = haveOneSection ? imageInfos.count : sectionLengthArray[0]
+        var sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: realSectionLength, sectionName: imageInfos[0].type.label)
+        sectionsAttributesArray.append(sectionAttributes) // sets up attributes for first section
+        
+        guard !haveOneSection else {return}
+
         
         var offset: Int
         var nextOffset: Int
@@ -129,7 +127,6 @@ class SourceCollectionController: NSViewController {
     }
     
     func numberOfItemsInSection(_ section: Int) -> Int {
-        print("sectionsAttributesArray[section].sectionLength ", sectionsAttributesArray[section].sectionLength)
         return sectionsAttributesArray[section].sectionLength
     }
     
@@ -146,6 +143,7 @@ class SourceCollectionController: NSViewController {
         collectionView.reloadData()
     }
 }
+
 extension SourceCollectionController : NSCollectionViewDelegate
 {
     func collectionView (_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
@@ -176,11 +174,9 @@ extension SourceCollectionController : NSCollectionViewDelegate
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
             (item as! CollectionViewItem).setHighlight(selected: selected)
         }
-        //        addSlideButton.enabled = collectionView.selectionIndexPaths.count == 1
-        //        removeSlideButton.enabled = !collectionView.selectionIndexPaths.isEmpty
     }
-    
 }
+
 extension SourceCollectionController : NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {

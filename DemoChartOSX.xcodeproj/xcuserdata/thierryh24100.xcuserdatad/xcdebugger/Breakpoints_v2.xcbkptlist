@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DemoChartOSX/MainWindowController.swift"
-            timestampString = "525475387.616363"
+            timestampString = "525496251.61871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "setUpCollectionController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoChartOSX/Collection/SourceCollectionController.swift"
+            timestampString = "525496251.618792"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "setupDataForMultiSectionMode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

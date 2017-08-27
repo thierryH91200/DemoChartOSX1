@@ -66,18 +66,17 @@
                                 <rect key="frame" x="251" y="0.0" width="1179" height="976"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <customView fixedFrame="YES" id="dfy-zY-WS6">
-                                        <rect key="frame" x="0.0" y="0.0" width="1179" height="976"/>
+                                    <customView fixedFrame="YES" id="XSh-5z-7Wt">
+                                        <rect key="frame" x="0.0" y="0.0" width="1179" height="464"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <subviews>
-                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSh-5z-7Wt">
-                                                <rect key="frame" x="0.0" y="119" width="1179" height="888"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            </customView>
-                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="dfy-zY-WS6">
+                                        <rect key="frame" x="0.0" y="465" width="1179" height="511"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
+                                    <real value="250"/>
                                     <real value="250"/>
                                 </holdingPriorities>
                             </splitView>

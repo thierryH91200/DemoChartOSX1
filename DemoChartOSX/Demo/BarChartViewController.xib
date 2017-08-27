@@ -27,8 +27,8 @@
                     </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="PsS-VW-HIO" secondAttribute="bottom" id="6dZ-I6-lYc"/>
-                    <constraint firstAttribute="trailing" secondItem="PsS-VW-HIO" secondAttribute="trailing" id="Pfd-OM-cZ2"/>
+                    <constraint firstItem="PsS-VW-HIO" firstAttribute="bottom" secondItem="EiT-Mj-1SZ" secondAttribute="bottom" id="6dZ-I6-lYc"/>
+                    <constraint firstItem="PsS-VW-HIO" firstAttribute="trailing" secondItem="EiT-Mj-1SZ" secondAttribute="trailing" id="Pfd-OM-cZ2"/>
                     <constraint firstItem="PsS-VW-HIO" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Vsu-er-8G5"/>
                     <constraint firstItem="PsS-VW-HIO" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="mTf-iW-azf"/>
                 </constraints>
